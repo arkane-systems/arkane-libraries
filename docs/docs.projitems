@@ -9,5 +9,17 @@
     <Import_RootNamespace>docs</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)annotations\contents.rst" />
+    <None Include="$(MSBuildThisFileDirectory)annotations\simpleattributes.rst" />
+    <None Include="$(MSBuildThisFileDirectory)annotations\warningattribute.rst" />
+    <None Include="$(MSBuildThisFileDirectory)conf.py" />
+    <None Include="$(MSBuildThisFileDirectory)contents.rst" />
+    <None Include="$(MSBuildThisFileDirectory)license.rst" />
+    <None Include="$(MSBuildThisFileDirectory)make.bat" />
+    <None Include="$(MSBuildThisFileDirectory)Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)_static\" />
+    <Folder Include="$(MSBuildThisFileDirectory)_templates\" />
   </ItemGroup>
 </Project>

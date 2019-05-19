@@ -14,8 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{8902BBE9-DF51-45D6-81D0-310C7A717ED9}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "docs", "..\docs\docs.shproj", "{5C5D63CB-13FD-4D1A-B3D5-620AC45FEE20}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\docs\docs.projitems*{5c5d63cb-13fd-4d1a-b3d5-620ac45fee20}*SharedItemsImports = 13
 		Shared\Shared.projitems*{8902bbe9-df51-45d6-81d0-310c7a717ed9}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
