@@ -10,6 +10,8 @@ Welcome to the Arkane Libraries' documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   license
+
 Features
 ========
 
@@ -19,5 +21,4 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

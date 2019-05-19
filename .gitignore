@@ -330,5 +330,5 @@ ASALocalRun/
 .mfractor/
 
 # Sphinx built files
-doc/_build/
+docs/_build/
 
