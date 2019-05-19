@@ -11,4 +11,7 @@
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)SharedResources.resw" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)SharedProperties.cs" />
+  </ItemGroup>
 </Project>
