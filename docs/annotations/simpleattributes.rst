@@ -6,16 +6,12 @@ These attributes simply incorporate the associated information into the assembly
 Author
 ------
 
-.. index:: AuthorAttribute
-
     [Author (string name, string email)]
 
 This attribute embeds the authorship of an entire assembly or specific class, method, etc. Both parameters are required, and the *email* parameter must be a valid e-mail address.
 
 Documentation
 -------------
-
-.. index:: DocumentationAttribute
 
     [Documentation (string uri)]
 

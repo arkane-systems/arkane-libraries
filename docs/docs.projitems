@@ -13,7 +13,7 @@
     <None Include="$(MSBuildThisFileDirectory)annotations\simpleattributes.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\warningattribute.rst" />
     <None Include="$(MSBuildThisFileDirectory)conf.py" />
-    <None Include="$(MSBuildThisFileDirectory)contents.rst" />
+    <None Include="$(MSBuildThisFileDirectory)index.rst" />
     <None Include="$(MSBuildThisFileDirectory)license.rst" />
     <None Include="$(MSBuildThisFileDirectory)make.bat" />
     <None Include="$(MSBuildThisFileDirectory)Makefile" />

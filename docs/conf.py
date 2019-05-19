@@ -21,7 +21,7 @@ project = 'Arkane Libraries'
 copyright = '2019, Alistair J. R. Young'
 author = 'Alistair J. R. Young'
 
-master_doc = 'contents'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
 release = 'pre'
