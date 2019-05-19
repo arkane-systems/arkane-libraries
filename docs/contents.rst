@@ -11,6 +11,7 @@ Welcome to the Arkane Libraries' documentation!
    :caption: Contents:
 
    license
+   annotations/contents
 
 Features
 ========
