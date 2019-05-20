@@ -27,4 +27,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)_static\" />
     <Folder Include="$(MSBuildThisFileDirectory)_templates\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)annotations\donoteditattribute.rst" />
+  </ItemGroup>
 </Project>
