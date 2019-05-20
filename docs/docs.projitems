@@ -14,6 +14,7 @@
     <None Include="$(MSBuildThisFileDirectory)annotations\programminglanguages.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\simpleattributes.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\sourcelanguageattribute.rst" />
+    <None Include="$(MSBuildThisFileDirectory)annotations\uneditability.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\warningattribute.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\assemblygitversionattribute.rst" />
     <None Include="$(MSBuildThisFileDirectory)conf.py" />
