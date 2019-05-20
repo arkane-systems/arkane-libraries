@@ -28,6 +28,9 @@ using ArkaneSystems.Arkane.Annotations ;
 [assembly: Author ("Alistair J. R. Young", "avatar@arkane-systems.net")]
 [assembly: Documentation ("https://arkane-libraries.readthedocs.io/en/latest/")]
 
+// Language information
+[assembly: SourceLanguage (ProgrammingLanguages.CSharp, RewrittenByPostSharp = true)]
+
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
 // COM, set the ComVisible attribute to true on that type.
