@@ -3,7 +3,7 @@
 
     public enum ProgrammingLanguages
 
-An enumeration of programming languages, primarily intended for use with the :doc:`SourceLanguageAttribute`.
+An enumeration of programming languages, primarily intended for use with the :doc:`sourcelanguageattribute`.
 
 The enumeration contains the following elements:
 

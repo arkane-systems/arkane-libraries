@@ -9,6 +9,8 @@ the use of external tools, but which can also be conveniently accessed via refle
 .. toctree::
    :maxdepth: 2
 
+   addgitstampattribute
+   assemblygitversionattribute
    programminglanguages
    simpleattributes
    sourcelanguageattribute

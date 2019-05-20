@@ -1,7 +1,7 @@
 ﻿SourceLanguageAttribute
 =======================
 
-    [SourceLanguage (:doc:`ProgrammingLanguages` language)]
+    [SourceLanguage (:doc:`programminglanguages` language)]
 
 An attribute, applicable only to assemblies, identifying the original programming language in which an assembly was developed, along with certain other related information.
 

@@ -9,11 +9,13 @@
     <Import_RootNamespace>docs</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)annotations\addgitstampattribute.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\contents.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\programminglanguages.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\simpleattributes.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\sourcelanguageattribute.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\warningattribute.rst" />
+    <None Include="$(MSBuildThisFileDirectory)assemblygitversionattribute.rst" />
     <None Include="$(MSBuildThisFileDirectory)conf.py" />
     <None Include="$(MSBuildThisFileDirectory)index.rst" />
     <None Include="$(MSBuildThisFileDirectory)license.rst" />
