@@ -29,3 +29,17 @@ LegacyWrapper
 This attribute indicates that the following class or method exists to insulate one from the liveliest awfulness of the legacy code that it's wrapped around.
 
 Comments can be read out using the *Comments* property.
+
+ObligatoryQuotation
+-------------------
+
+    [ObligatoryQuotation (string quotation, string source, string citation)]
+
+It had to be said, so I did.
+
+Why? Why not just in the comments? Well, it's because this sort of thing is useful insight into the mind of the developer, and - assuming we're not obfuscating - that should be available right there in the assembly as well as the source.
+
+The citation for the original quotation should preferably, not necessarily, be supplied in URI format, and may be null.
+
+
+The quotation can be read out using the *Quotation*, *Source*, and *Citation* properties.
