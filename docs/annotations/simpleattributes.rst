@@ -12,6 +12,15 @@ This attribute embeds the authorship of an entire assembly or specific class, me
 
 This information can be read out using the *Name* and *EmailAddress* properties.
 
+BugFix
+------
+
+    [BugFix (int caseNumber, string Comments = "Comments.")]
+
+This attribute embeds the case number of a bug fix - for the specific class, method, etc. - in an issue-tracking system. The caseNumber parameter is required; additional comments may optionally be given.
+
+This information can be read out of the *CaseNumber* and *Comments* properties.
+
 Documentation
 -------------
 
