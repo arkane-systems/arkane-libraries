@@ -8,11 +8,24 @@ Author
 
     [Author (string name, string email)]
 
-This attribute embeds the authorship of an entire assembly or specific class, method, etc. Both parameters are required, and the *email* parameter must be a valid e-mail address. This information can be read out using the *Name* and *EmailAddress* properties.
+This attribute embeds the authorship of an entire assembly or specific class, method, etc. Both parameters are required, and the *email* parameter must be a valid e-mail address.
+
+This information can be read out using the *Name* and *EmailAddress* properties.
 
 Documentation
 -------------
 
     [Documentation (string uri)]
 
-This attribute, applicable only to assemblies, embeds the URL where documentation for that assembly may be found. The *uri* parameter must be a valid URL using the http:, https:, or ftp: protocol. This information can be read out using the *Location* property.
+This attribute, applicable only to assemblies, embeds the URL where documentation for that assembly may be found. The *uri* parameter must be a valid URL using the http:, https:, or ftp: protocol.
+
+This information can be read out using the *Location* property.
+
+LegacyWrapper
+-------------
+
+    [LegacyWrapper (string comments)]
+
+This attribute indicates that the following class or method exists to insulate one from the liveliest awfulness of the legacy code that it's wrapped around.
+
+Comments can be read out using the *Comments* property.
