@@ -13,6 +13,8 @@
     <None Include="$(MSBuildThisFileDirectory)annotations\contents.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\programminglanguages.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\simpleattributes.rst" />
+    <None Include="$(MSBuildThisFileDirectory)annotations\softwarequality.rst" />
+    <None Include="$(MSBuildThisFileDirectory)annotations\softwarereliability.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\sourcelanguageattribute.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\uneditability.rst" />
     <None Include="$(MSBuildThisFileDirectory)annotations\warningattribute.rst" />
@@ -29,5 +31,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)annotations\donoteditattribute.rst" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)annotations\codequalityattribute.rst" />
   </ItemGroup>
 </Project>

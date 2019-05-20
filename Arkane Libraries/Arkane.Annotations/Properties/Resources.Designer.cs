@@ -59,5 +59,14 @@ namespace ArkaneSystems.Arkane.Annotations.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Perfection is unattainable, grasshopper..
+        /// </summary>
+        internal static string CodeQualityAttribute_PerfectionIsUnattainable {
+            get {
+                return ResourceManager.GetString("CodeQualityAttribute_PerfectionIsUnattainable", resourceCulture);
+            }
+        }
     }
 }
