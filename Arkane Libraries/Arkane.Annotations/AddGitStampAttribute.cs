@@ -157,7 +157,7 @@ namespace ArkaneSystems.Arkane.Annotations
                 if (lines.Any ())
                     this.gitVersion += " modified" ;
 
-                Message.Write (assembly, SeverityType.Info, "GS0004", "Lines: {0}", lines.Count ()) ;
+                Message.Write (assembly, SeverityType.Info, "GS0004", "Lines: {0}", lines.Length) ;
             }
 
             // ReSharper disable once CatchAllClause
