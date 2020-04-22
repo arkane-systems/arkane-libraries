@@ -1,6 +1,6 @@
 ﻿#region header
 
-// Arkane.Annotations - Threading.cs
+// Arkane Libraries - Threading.cs
 // 
 // Alistair J. R. Young
 // Arkane Systems

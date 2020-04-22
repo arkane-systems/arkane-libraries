@@ -1,58 +1,42 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>ArkaneSystems.Arkane.Annotations</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RootNamespace>ArkaneSystems.Arkane.Core</RootNamespace>
+    <Nullable>enable</Nullable>
     <Version>0.1</Version>
     <Authors>Alistair J. R. Young</Authors>
     <Company>Arkane Systems</Company>
     <Product>Arkane Libraries</Product>
-    <PackageLicenseExpression></PackageLicenseExpression>
+    <Description>Core functionality of the Arkane Systems base class library.</Description>
     <Copyright>Copyright © Arkane Systems 2012-2020</Copyright>
-    <Description>Annotation attributes for the Arkane Systems base class library.</Description>
     <PackageProjectUrl>https://github.com/arkane-systems/arkane-libraries</PackageProjectUrl>
     <RepositoryUrl>https://github.com/arkane-systems/arkane-libraries</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>utility library arkane-systems annotations</PackageTags>
-    <LangVersion>8.0</LangVersion>
+    <PackageTags>utility library arkane-systems</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>arkane.snk</AssemblyOriginatorKeyFile>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;JETBRAINS_ANNOTATIONS</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;JETBRAINS_ANNOTATIONS</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="AssemblyExtensionMethods.cs~RF2e337b73.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
     <PackageReference Include="PostSharp" Version="6.6.6" />
     <PackageReference Include="PostSharp.Patterns.Common" Version="6.6.6" />
     <PackageReference Include="PostSharp.Patterns.Threading" Version="6.6.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <ProjectReference Include="..\Arkane.Annotations\Arkane.Annotations.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

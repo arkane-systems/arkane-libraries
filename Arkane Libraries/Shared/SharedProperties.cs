@@ -1,6 +1,6 @@
 ﻿#region header
 
-// Arkane.Annotations - SharedProperties.cs
+// Arkane Libraries - SharedProperties.cs
 // 
 // Alistair J. R. Young
 // Arkane Systems
