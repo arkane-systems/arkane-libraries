@@ -46,7 +46,7 @@ namespace ArkaneSystems.Arkane.Annotations
     [PublicAPI]
     public sealed class AddGitStampAttribute : AssemblyLevelAspect, IAspectProvider
     {
-        private string gitVersion ;
+        private string? gitVersion ;
 
         #region IAspectProvider Members
 

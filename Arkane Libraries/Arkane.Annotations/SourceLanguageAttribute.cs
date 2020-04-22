@@ -57,6 +57,6 @@ namespace ArkaneSystems.Arkane.Annotations
         /// <summary>
         ///     How has this assembly been modified post-compilation?
         /// </summary>
-        public string PostCompilationModifications { get ; set ; }
+        public string PostCompilationModifications { get ; set ; } = "None." ;
     }
 }

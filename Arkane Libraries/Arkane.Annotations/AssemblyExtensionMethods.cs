@@ -53,9 +53,8 @@ namespace System.Reflection
         /// </summary>
         /// <param name="this">The assembly to examine.</param>
         /// <returns>The URI for the documentation for the assembly.</returns>
-        [CanBeNull]
-        public static Uri GetDocumentation ([JetBrains.Annotations.NotNull] [Required]
-                                            this Assembly @this) =>
+        public static Uri? GetDocumentation ([JetBrains.Annotations.NotNull] [Required]
+                                             this Assembly @this) =>
             @this.GetCustomAttribute <DocumentationAttribute> ()?.Location ;
 
         /// <summary>
