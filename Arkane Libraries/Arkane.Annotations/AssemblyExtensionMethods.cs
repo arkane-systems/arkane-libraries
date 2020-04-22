@@ -31,7 +31,7 @@ namespace System.Reflection
 
     // ReSharper disable once InconsistentNaming
 #pragma warning disable IDE1006 // Naming Styles
-    public static class αο_Annotations
+    public static class ας_Annotations
 #pragma warning restore IDE1006 // Naming Styles
     {
         /// <summary>
