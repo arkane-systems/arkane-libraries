@@ -13,5 +13,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)SharedProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threading.cs" />
   </ItemGroup>
 </Project>

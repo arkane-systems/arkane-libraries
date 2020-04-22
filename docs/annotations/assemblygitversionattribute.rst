@@ -1,7 +1,7 @@
 ﻿AssemblyGitVersionAttribute
 ===========================
 
-.. note::
+.. warning::
 
   This attribute is automatically applied to the assembly post-compilation by the :doc:`addgitstampattribute`. It should not be added in the source code.
 

@@ -3,11 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkane.Annotations", "Arkane.Annotations\Arkane.Annotations.csproj", "{11843EB8-8C8C-4741-B385-C26796B798BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arkane.Annotations", "Arkane.Annotations\Arkane.Annotations.csproj", "{11843EB8-8C8C-4741-B385-C26796B798BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50CB92DF-DBF7-4E83-93B4-04A9895F6E94}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		Directory.Build.props = Directory.Build.props
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
 	EndProjectSection
@@ -18,6 +19,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "docs", "..\docs\docs.shproj
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\Shared.projitems*{11843eb8-8c8c-4741-b385-c26796b798bb}*SharedItemsImports = 5
 		..\docs\docs.projitems*{5c5d63cb-13fd-4d1a-b3d5-620ac45fee20}*SharedItemsImports = 13
 		Shared\Shared.projitems*{8902bbe9-df51-45d6-81d0-310c7a717ed9}*SharedItemsImports = 13
 	EndGlobalSection

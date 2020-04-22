@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>ArkaneSystems.Arkane.Annotations</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.1</Version>
@@ -15,6 +15,7 @@
     <RepositoryUrl>https://github.com/arkane-systems/arkane-libraries</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>utility library arkane-systems annotations</PackageTags>
+    <LangVersion>8.0</LangVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>arkane.snk</AssemblyOriginatorKeyFile>
@@ -29,9 +30,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
-    <PackageReference Include="PostSharp" Version="6.2.5" />
-    <PackageReference Include="PostSharp.Patterns.Common" Version="6.2.5" />
+    <None Remove="AssemblyExtensionMethods.cs~RF2e337b73.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+    <PackageReference Include="PostSharp" Version="6.6.6" />
+    <PackageReference Include="PostSharp.Patterns.Common" Version="6.6.6" />
+    <PackageReference Include="PostSharp.Patterns.Threading" Version="6.6.6" />
   </ItemGroup>
 
   <ItemGroup>

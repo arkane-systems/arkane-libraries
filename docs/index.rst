@@ -24,6 +24,6 @@ These libraries are released under the MIT License, as included below.
    :maxdepth: 2
    :caption: Contents:
 
-   contents.rst
+   index
    license
    annotations/contents
