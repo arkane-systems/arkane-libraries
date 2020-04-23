@@ -123,4 +123,22 @@
   <data name="LoggerExecutionWrapper_FailedToGenerateLogMessage" xml:space="preserve">
     <value>Failed to generate log message.</value>
   </data>
+  <data name="LogProviderBase_ErrorInitializingProvider_ProblemInitializingLogProvider" xml:space="preserve">
+    <value>Unable to log due to problem initializing the log provider. See inner exception for details.</value>
+  </data>
+  <data name="SerilogLogger_Initialize_LogLevelEventTypeNotFound" xml:space="preserve">
+    <value>Type Serilog.Events.LogEventLevel was not found.</value>
+  </data>
+  <data name="SerilogLogger_Initialize_ILoggerNotFound" xml:space="preserve">
+    <value>Type Serilog.ILogger was not found.</value>
+  </data>
+  <data name="SerilogLogProvider_SerilogLogProvider_LogNotFound" xml:space="preserve">
+    <value>Serilog.Log not found.</value>
+  </data>
+  <data name="SerilogLogProvider_GetPushProperty_LogContextNotFound" xml:space="preserve">
+    <value>Serilog LogContext type not found.</value>
+  </data>
+  <data name="SerilogLogProvider_GetForContextMethodCall_LogNotFound" xml:space="preserve">
+    <value>Serilog Log type not found.</value>
+  </data>
 </root>

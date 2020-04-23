@@ -18,6 +18,7 @@ using System.Collections.Generic ;
 using System.Diagnostics ;
 using System.Runtime.CompilerServices ;
 
+using ArkaneSystems.Arkane.Logging.LogProviders ;
 using ArkaneSystems.Arkane.Properties ;
 
 using JetBrains.Annotations ;

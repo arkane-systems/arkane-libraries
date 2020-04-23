@@ -77,5 +77,59 @@ namespace ArkaneSystems.Arkane.Properties {
                 return ResourceManager.GetString("LogProvider_ForceResolveLogProvider_ExceptionResolvingLogProvider", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to log due to problem initializing the log provider. See inner exception for details..
+        /// </summary>
+        internal static string LogProviderBase_ErrorInitializingProvider_ProblemInitializingLogProvider {
+            get {
+                return ResourceManager.GetString("LogProviderBase_ErrorInitializingProvider_ProblemInitializingLogProvider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type Serilog.ILogger was not found..
+        /// </summary>
+        internal static string SerilogLogger_Initialize_ILoggerNotFound {
+            get {
+                return ResourceManager.GetString("SerilogLogger_Initialize_ILoggerNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type Serilog.Events.LogEventLevel was not found..
+        /// </summary>
+        internal static string SerilogLogger_Initialize_LogLevelEventTypeNotFound {
+            get {
+                return ResourceManager.GetString("SerilogLogger_Initialize_LogLevelEventTypeNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serilog Log type not found..
+        /// </summary>
+        internal static string SerilogLogProvider_GetForContextMethodCall_LogNotFound {
+            get {
+                return ResourceManager.GetString("SerilogLogProvider_GetForContextMethodCall_LogNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serilog LogContext type not found..
+        /// </summary>
+        internal static string SerilogLogProvider_GetPushProperty_LogContextNotFound {
+            get {
+                return ResourceManager.GetString("SerilogLogProvider_GetPushProperty_LogContextNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serilog.Log not found..
+        /// </summary>
+        internal static string SerilogLogProvider_SerilogLogProvider_LogNotFound {
+            get {
+                return ResourceManager.GetString("SerilogLogProvider_SerilogLogProvider_LogNotFound", resourceCulture);
+            }
+        }
     }
 }
