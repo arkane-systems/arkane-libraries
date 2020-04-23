@@ -15,6 +15,8 @@
 
 using System ;
 
+using ArkaneSystems.Arkane.Logging ;
+
 //using ArkaneSystems.Arkane.Logging ;
 
 using JetBrains.Annotations ;
@@ -30,7 +32,7 @@ namespace ArkaneSystems.Arkane.Internal
     /// </summary>
     public static class ModuleInit
     {
- //       private static readonly ILog Logger = LogProvider.GetCurrentClassLogger () ;
+        private static readonly ILog Logger = LogProvider.GetCurrentClassLogger () ;
 
         /// <summary>
         ///     Module initializer. Runs whenever this module is initialized.
@@ -43,7 +45,7 @@ namespace ArkaneSystems.Arkane.Internal
             AppContext.SetSwitch ("Switch.ArkaneSystems.Arkane.Core.Presence", true) ;
 
             // Log startup.
-//            ModuleInit.Logger.Info ("Arkane.Core library initialized.") ;
+            ModuleInit.Logger.Info ("Arkane.Core library initialized.") ;
         }
     }
 }
