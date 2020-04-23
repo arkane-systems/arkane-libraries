@@ -15,6 +15,8 @@
 
 using System ;
 
+//using ArkaneSystems.Arkane.Logging ;
+
 using JetBrains.Annotations ;
 
 using PostSharp.Aspects ;
@@ -28,6 +30,8 @@ namespace ArkaneSystems.Arkane.Internal
     /// </summary>
     public static class ModuleInit
     {
+ //       private static readonly ILog Logger = LogProvider.GetCurrentClassLogger () ;
+
         /// <summary>
         ///     Module initializer. Runs whenever this module is initialized.
         /// </summary>
@@ -37,6 +41,9 @@ namespace ArkaneSystems.Arkane.Internal
         {
             // Mark our presence in the AppContext.
             AppContext.SetSwitch ("Switch.ArkaneSystems.Arkane.Core.Presence", true) ;
+
+            // Log startup.
+//            ModuleInit.Logger.Info ("Arkane.Core library initialized.") ;
         }
     }
 }

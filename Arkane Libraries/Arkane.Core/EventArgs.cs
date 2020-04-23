@@ -17,6 +17,9 @@ using System ;
 
 using JetBrains.Annotations ;
 
+using PostSharp.Patterns.Model ;
+using PostSharp.Patterns.Threading ;
+
 #endregion
 
 namespace ArkaneSystems.Arkane
@@ -26,6 +29,7 @@ namespace ArkaneSystems.Arkane
     /// </summary>
     /// <typeparam name="T">The type of the contained value.</typeparam>
     [PublicAPI]
+    [Immutable]
     public class EventArgs <T> : EventArgs
     {
         /// <summary>
@@ -37,6 +41,7 @@ namespace ArkaneSystems.Arkane
         /// <summary>
         ///     The typed value contained in the EventArgs{T}.
         /// </summary>
+        [Reference]
         public T Value { get ; }
     }
 }
