@@ -1,6 +1,6 @@
 ﻿# LibLog
 
-This library incorporates the functionality and much of the code of LibLog, a now discontinued universal logging abstraction.
+This library incorporates the functionality and much of the code of LibLog, a now discontinued universal logging abstraction, by Damian Hickey.
 
 LibLog was licensed under the MIT license.
 

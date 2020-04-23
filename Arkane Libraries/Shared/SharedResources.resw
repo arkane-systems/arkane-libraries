@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Copyright" xml:space="preserve">
-    <value>Copyright © Arkane Systems 2012-2019</value>
+    <value />
     <comment>Copyright message - not used by any code</comment>
   </data>
 </root>

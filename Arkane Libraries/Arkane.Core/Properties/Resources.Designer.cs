@@ -59,5 +59,23 @@ namespace ArkaneSystems.Arkane.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to generate log message..
+        /// </summary>
+        internal static string LoggerExecutionWrapper_FailedToGenerateLogMessage {
+            get {
+                return ResourceManager.GetString("LoggerExecutionWrapper_FailedToGenerateLogMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exception occurred resolving a log provider. Logging for this assembly {0} is disabled. {1}.
+        /// </summary>
+        internal static string LogProvider_ForceResolveLogProvider_ExceptionResolvingLogProvider {
+            get {
+                return ResourceManager.GetString("LogProvider_ForceResolveLogProvider_ExceptionResolvingLogProvider", resourceCulture);
+            }
+        }
     }
 }

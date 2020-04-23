@@ -15,4 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)SharedProperties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Threading.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SharedResources.resx" />
+  </ItemGroup>
 </Project>
