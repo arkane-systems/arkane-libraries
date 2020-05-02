@@ -88,6 +88,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The code in this method should have been replaced at build time by the Packer. If you see this, it&apos;s probably because you didn&apos;t configure Packer with an assembly-wide attribute..
+        /// </summary>
+        internal static string PackerUtility_Initialize_CodeNotReplaced {
+            get {
+                return ResourceManager.GetString("PackerUtility_Initialize_CodeNotReplaced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type Serilog.ILogger was not found..
         /// </summary>
         internal static string SerilogLogger_Initialize_ILoggerNotFound {

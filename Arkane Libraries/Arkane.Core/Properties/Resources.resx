@@ -141,4 +141,7 @@
   <data name="SerilogLogProvider_GetForContextMethodCall_LogNotFound" xml:space="preserve">
     <value>Serilog Log type not found.</value>
   </data>
+  <data name="PackerUtility_Initialize_CodeNotReplaced" xml:space="preserve">
+    <value>The code in this method should have been replaced at build time by the Packer. If you see this, it's probably because you didn't configure Packer with an assembly-wide attribute.</value>
+  </data>
 </root>
