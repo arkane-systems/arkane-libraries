@@ -171,4 +171,13 @@
   <data name="PostCompileAttribute_CompileTimeValidate_LastPostCompileRunFailed" xml:space="preserve">
     <value>Last post-compile run failed at {0}: {1}.</value>
   </data>
+  <data name="Enums_ParseName_UnknownValueName" xml:space="preserve">
+    <value>Unknown enumeration value name.</value>
+  </data>
+  <data name="Enums_GetUsedBits_CannotCallForNonFlags" xml:space="preserve">
+    <value>Can't call this method for a non-flags enum.</value>
+  </data>
+  <data name="ας_System_CannotCallForNonFlagsEnum" xml:space="preserve">
+    <value>Cannot call this method for a non-flags enum.</value>
+  </data>
 </root>

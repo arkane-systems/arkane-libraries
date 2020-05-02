@@ -70,6 +70,24 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t call this method for a non-flags enum..
+        /// </summary>
+        internal static string Enums_GetUsedBits_CannotCallForNonFlags {
+            get {
+                return ResourceManager.GetString("Enums_GetUsedBits_CannotCallForNonFlags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown enumeration value name..
+        /// </summary>
+        internal static string Enums_ParseName_UnknownValueName {
+            get {
+                return ResourceManager.GetString("Enums_ParseName_UnknownValueName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to generate log message..
         /// </summary>
         internal static string LoggerExecutionWrapper_FailedToGenerateLogMessage {
@@ -220,6 +238,15 @@ namespace ArkaneSystems.Arkane.Properties {
         internal static string TypeArgumentException_TypeArgumentException_InvalidTypeArgument {
             get {
                 return ResourceManager.GetString("TypeArgumentException_TypeArgumentException_InvalidTypeArgument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot call this method for a non-flags enum..
+        /// </summary>
+        internal static string ας_System_CannotCallForNonFlagsEnum {
+            get {
+                return ResourceManager.GetString("ας_System_CannotCallForNonFlagsEnum", resourceCulture);
             }
         }
     }
