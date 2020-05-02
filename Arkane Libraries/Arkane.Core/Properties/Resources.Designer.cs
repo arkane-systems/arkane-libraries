@@ -249,5 +249,14 @@ namespace ArkaneSystems.Arkane.Properties {
                 return ResourceManager.GetString("ας_System_CannotCallForNonFlagsEnum", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to chopSize &gt;= @this.Length.
+        /// </summary>
+        internal static string ας_System_Text_Chop_ChopLongerThanString {
+            get {
+                return ResourceManager.GetString("ας_System_Text_Chop_ChopLongerThanString", resourceCulture);
+            }
+        }
     }
 }

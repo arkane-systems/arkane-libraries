@@ -180,4 +180,7 @@
   <data name="ας_System_CannotCallForNonFlagsEnum" xml:space="preserve">
     <value>Cannot call this method for a non-flags enum.</value>
   </data>
+  <data name="ας_System_Text_Chop_ChopLongerThanString" xml:space="preserve">
+    <value>chopSize &gt;= @this.Length</value>
+  </data>
 </root>
