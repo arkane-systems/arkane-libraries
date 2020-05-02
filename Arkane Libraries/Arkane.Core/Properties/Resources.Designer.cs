@@ -61,6 +61,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Something happened which cannot happen..
+        /// </summary>
+        internal static string CannotHappenException_CannotHappenException_SomethingHappened {
+            get {
+                return ResourceManager.GetString("CannotHappenException_CannotHappenException_SomethingHappened", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to generate log message..
         /// </summary>
         internal static string LoggerExecutionWrapper_FailedToGenerateLogMessage {
@@ -138,6 +147,25 @@ namespace ArkaneSystems.Arkane.Properties {
         internal static string SerilogLogProvider_SerilogLogProvider_LogNotFound {
             get {
                 return ResourceManager.GetString("SerilogLogProvider_SerilogLogProvider_LogNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This functionality must be implemented by a subclass of this base class..
+        /// </summary>
+        internal static string SubclassResponsibilityException_SubclassResponsibilityException_MustImplementInSubclass {
+            get {
+                return ResourceManager.GetString("SubclassResponsibilityException_SubclassResponsibilityException_MustImplementInSu" +
+                        "bclass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An invalid type argument was specified..
+        /// </summary>
+        internal static string TypeArgumentException_TypeArgumentException_InvalidTypeArgument {
+            get {
+                return ResourceManager.GetString("TypeArgumentException_TypeArgumentException_InvalidTypeArgument", resourceCulture);
             }
         }
     }

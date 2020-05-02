@@ -144,4 +144,13 @@
   <data name="PackerUtility_Initialize_CodeNotReplaced" xml:space="preserve">
     <value>The code in this method should have been replaced at build time by the Packer. If you see this, it's probably because you didn't configure Packer with an assembly-wide attribute.</value>
   </data>
+  <data name="CannotHappenException_CannotHappenException_SomethingHappened" xml:space="preserve">
+    <value>Something happened which cannot happen.</value>
+  </data>
+  <data name="SubclassResponsibilityException_SubclassResponsibilityException_MustImplementInSubclass" xml:space="preserve">
+    <value>This functionality must be implemented by a subclass of this base class.</value>
+  </data>
+  <data name="TypeArgumentException_TypeArgumentException_InvalidTypeArgument" xml:space="preserve">
+    <value>An invalid type argument was specified.</value>
+  </data>
 </root>
