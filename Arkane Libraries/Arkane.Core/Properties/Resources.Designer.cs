@@ -106,6 +106,60 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The PostCompile aspect cannot be applied to constructors/destructors..
+        /// </summary>
+        internal static string PostCompileAttribute_CompileTimeValidate_CannotApplyToConstructorsDestructors {
+            get {
+                return ResourceManager.GetString("PostCompileAttribute_CompileTimeValidate_CannotApplyToConstructorsDestructors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The PostCompile aspect can only be applied to methods without parameters..
+        /// </summary>
+        internal static string PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToParameterless {
+            get {
+                return ResourceManager.GetString("PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToParameterless", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The PostCompile aspect can only be applied to static methods..
+        /// </summary>
+        internal static string PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToStaticMethods {
+            get {
+                return ResourceManager.GetString("PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToStaticMethods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The PostCompile aspect can only be applied to methods returning void..
+        /// </summary>
+        internal static string PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToVoidReturn {
+            get {
+                return ResourceManager.GetString("PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToVoidReturn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last post-compile run failed at {0}: {1}..
+        /// </summary>
+        internal static string PostCompileAttribute_CompileTimeValidate_LastPostCompileRunFailed {
+            get {
+                return ResourceManager.GetString("PostCompileAttribute_CompileTimeValidate_LastPostCompileRunFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last post-compile run succeeded at {0}..
+        /// </summary>
+        internal static string PostCompileAttribute_CompileTimeValidate_LastPostCompileRunSucceeded {
+            get {
+                return ResourceManager.GetString("PostCompileAttribute_CompileTimeValidate_LastPostCompileRunSucceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type Serilog.ILogger was not found..
         /// </summary>
         internal static string SerilogLogger_Initialize_ILoggerNotFound {

@@ -153,4 +153,22 @@
   <data name="TypeArgumentException_TypeArgumentException_InvalidTypeArgument" xml:space="preserve">
     <value>An invalid type argument was specified.</value>
   </data>
+  <data name="PostCompileAttribute_CompileTimeValidate_CannotApplyToConstructorsDestructors" xml:space="preserve">
+    <value>The PostCompile aspect cannot be applied to constructors/destructors.</value>
+  </data>
+  <data name="PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToStaticMethods" xml:space="preserve">
+    <value>The PostCompile aspect can only be applied to static methods.</value>
+  </data>
+  <data name="PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToParameterless" xml:space="preserve">
+    <value>The PostCompile aspect can only be applied to methods without parameters.</value>
+  </data>
+  <data name="PostCompileAttribute_CompileTimeValidate_CanOnlyApplyToVoidReturn" xml:space="preserve">
+    <value>The PostCompile aspect can only be applied to methods returning void.</value>
+  </data>
+  <data name="PostCompileAttribute_CompileTimeValidate_LastPostCompileRunSucceeded" xml:space="preserve">
+    <value>Last post-compile run succeeded at {0}.</value>
+  </data>
+  <data name="PostCompileAttribute_CompileTimeValidate_LastPostCompileRunFailed" xml:space="preserve">
+    <value>Last post-compile run failed at {0}: {1}.</value>
+  </data>
 </root>
