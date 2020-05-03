@@ -93,7 +93,7 @@ namespace ArkaneSystems.Arkane.Logging.LogProviders
         /// </summary>
         /// <param name="key">A key.</param>
         /// <param name="value">A value.</param>
-        /// <param name="destructure">Determines whether to call the destructor or not.</param>
+        /// <param name="destructure">Determines whether to destructure the value or not.</param>
         /// <returns>A disposable that when disposed removes the map from the context.</returns>
         public IDisposable OpenMappedContext (string key, object value, bool destructure = false) =>
             this.lazyOpenMdcMethod.Value (key, value, destructure) ;

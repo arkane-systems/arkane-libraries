@@ -41,11 +41,11 @@ namespace ArkaneSystems.Arkane.Logging
 
         private interface ICallSiteExtension
         {
-            bool Log (Logger        logger,
-                      LogLevel      logLevel,
-                      Func <string> messageFunc,
-                      Exception?    exception,
-                      object[]      formatParameters) ;
+            bool Log (Logger         logger,
+                      LogLevel       logLevel,
+                      Func <string?> messageFunc,
+                      Exception?     exception,
+                      object[]       formatParameters) ;
         }
 
         #endregion
@@ -101,22 +101,22 @@ namespace ArkaneSystems.Arkane.Logging
                                            formatParameters) ;
             }
 
-            var wrappedMessageFunc = new Func <string> (() =>
-                                                        {
-                                                            try
-                                                            {
-                                                                return messageFunc () ;
-                                                            }
-                                                            catch (Exception ex)
-                                                            {
-                                                                this.WrappedLogger (LogLevel.Error,
-                                                                                    () => LoggerExecutionWrapper
-                                                                                       .FailedToGenerateLogMessage,
-                                                                                    ex) ;
-                                                            }
+            var wrappedMessageFunc = new Func <string?> (() =>
+                                                         {
+                                                             try
+                                                             {
+                                                                 return messageFunc () ;
+                                                             }
+                                                             catch (Exception ex)
+                                                             {
+                                                                 this.WrappedLogger (LogLevel.Error,
+                                                                                     () => LoggerExecutionWrapper
+                                                                                        .FailedToGenerateLogMessage,
+                                                                                     ex) ;
+                                                             }
 
-                                                            return string.Empty ;
-                                                        }) ;
+                                                             return null ;
+                                                         }) ;
 
             // Callsite HACK - Need to ensure proper callsite stack without inlining, so calling the logger within a virtual interface method
             return this.callSiteLogger.Log (this.WrappedLogger, logLevel, wrappedMessageFunc, exception, formatParameters) ;

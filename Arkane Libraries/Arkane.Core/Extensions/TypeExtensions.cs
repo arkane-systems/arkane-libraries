@@ -114,7 +114,6 @@ namespace System
         /// <param name="this">The type to check.</param>
         /// <returns>True if the type has a default constructor; false otherwise.</returns>
         public static bool HasDefaultConstructor (
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type @this)
             => @this.GetTypeInfo ()
                     .DeclaredConstructors
@@ -128,9 +127,7 @@ namespace System
         /// <param name="genericType">The type to check for.</param>
         /// <returns>True if type is generic, is closed, and has genericType as a type argument; false otherwise.</returns>
         public static bool HasGenericTypeArgument (
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type type,
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             Type genericType)
         {
             if (type.GetTypeInfo ().IsGenericType)
@@ -216,11 +213,8 @@ namespace System
         ///     but the class identifier used to obtain the type is invalid, or the identified class is not registered.
         /// </exception>
         /// <exception cref="T:System.TypeLoadException"><paramref name="type">type</paramref> is not a valid type.</exception>
-        [JetBrains.Annotations.NotNull]
         public static object CreateInstance (
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type type,
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             params object[] constructorParameters)
             => Activator.CreateInstance (type, constructorParameters) ;
 
@@ -259,13 +253,9 @@ namespace System
         /// </exception>
         /// <exception cref="T:System.TypeLoadException"><paramref name="type">type</paramref> is not a valid type.</exception>
         /// <exception cref="T:System.ArgumentException">type is not an open generic type.</exception>
-        [JetBrains.Annotations.NotNull]
         public static object CreateGenericInstance (
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type type,
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             Type[] typeArguments,
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             params object[] constructorParameters)
         {
             if (!type.GetTypeInfo ().IsGenericTypeDefinition)
@@ -285,7 +275,6 @@ namespace System
         /// <param name="this">The type to check.</param>
         /// <returns>The method which this type overrides.</returns>
         /// Based on C# Cookbook Third Edition, 13.3.
-        [JetBrains.Annotations.NotNull]
         public static IEnumerable <MethodInfo> FindMethodOverrides (
             [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type @this)
@@ -317,10 +306,8 @@ namespace System
         /// </exception>
         /// <exception cref="ArgumentException">Specified method does not exist.</exception>
         public static bool IsMethodOverride (
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type @this,
-            [JetBrains.Annotations.NotNull] [Required]
-            string methodName,
+            [Required] string methodName,
             Type[]? paramTypes)
         {
             MethodInfo method = @this.GetMethod (methodName, paramTypes ?? new Type[0]) ;
@@ -414,7 +401,6 @@ namespace System
         /// <returns>True if the specified type is <see cref="Nullable{T}" />; otherwise, false.</returns>
         /// <remarks>Use <see cref="Nullable.GetUnderlyingType" /> to access the underlying type.</remarks>
         public static bool IsNullableType (
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type @this)
             => @this.GetTypeInfo ().IsGenericType && (@this.GetGenericTypeDefinition () == typeof (Nullable <>)) ;
 
@@ -424,7 +410,6 @@ namespace System
         /// <param name="this">A <see cref="Type" />.</param>
         /// <returns>True if the specified type permits null values; false, otherwise.</returns>
         public static bool AllowsNullValue (
-            [JetBrains.Annotations.NotNull] [PostSharp.Patterns.Contracts.NotNull]
             this Type @this)
             => !@this.GetTypeInfo ().IsValueType || @this.IsNullableType () ;
 

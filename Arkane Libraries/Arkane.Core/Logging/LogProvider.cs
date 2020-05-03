@@ -46,7 +46,7 @@ namespace ArkaneSystems.Arkane.Logging
         ///     Sets the current log provider.
         /// </summary>
         /// <param name="logProvider">The new current log provider.</param>
-        public static void SetCurrentLogProvider (ILogProvider logProvider)
+        public static void SetCurrentLogProvider (ILogProvider? logProvider)
         {
             LogProvider.currentLogProvider = logProvider ;
             LogProvider.RaiseOnCurrentLogProviderSet () ;

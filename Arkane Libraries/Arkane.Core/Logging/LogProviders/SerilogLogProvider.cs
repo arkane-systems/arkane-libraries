@@ -193,11 +193,13 @@ namespace ArkaneSystems.Arkane.Logging.LogProviders
 
             this.getLoggerByNameDelegate    = SerilogLogProvider.GetForContextMethodCall () ;
             SerilogLogProvider.pushProperty = SerilogLogProvider.GetPushProperty () ;
+
+            SerilogLogProvider.ProviderIsAvailableOverride = true ;
         }
 
         private readonly Func <string, object> getLoggerByNameDelegate ;
 
-        public static bool ProviderIsAvailableOverride { get ; set ; } = true ;
+        public static bool ProviderIsAvailableOverride { get ; set ; }
 
         /// <inheritdoc />
         public override Logger GetLogger (string name) => new SerilogLogger (this.getLoggerByNameDelegate (name)).Log ;
