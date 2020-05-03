@@ -201,4 +201,13 @@
   <data name="UnsealableConstraintAttribute_ValidateCode_SubclassesCannotBeSealed" xml:space="preserve">
     <value>Subclasses of {1} ({0}) cannot be sealed.</value>
   </data>
+  <data name="ας_System_Left_LengthMustBeLess" xml:space="preserve">
+    <value>Length must be less than the length of the string.</value>
+  </data>
+  <data name="ας_System_BetweenSentinels_SentinelsCannotBeIdentical" xml:space="preserve">
+    <value>Sentinels cannot be identical.</value>
+  </data>
+  <data name="ας_System_SubstringByRange_EndIndexMustBePastStartIndex" xml:space="preserve">
+    <value>End index must be &gt;= start index.</value>
+  </data>
 </root>

@@ -287,11 +287,38 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sentinels cannot be identical..
+        /// </summary>
+        internal static string ας_System_BetweenSentinels_SentinelsCannotBeIdentical {
+            get {
+                return ResourceManager.GetString("ας_System_BetweenSentinels_SentinelsCannotBeIdentical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot call this method for a non-flags enum..
         /// </summary>
         internal static string ας_System_CannotCallForNonFlagsEnum {
             get {
                 return ResourceManager.GetString("ας_System_CannotCallForNonFlagsEnum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Length must be less than the length of the string..
+        /// </summary>
+        internal static string ας_System_Left_LengthMustBeLess {
+            get {
+                return ResourceManager.GetString("ας_System_Left_LengthMustBeLess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End index must be &gt;= start index..
+        /// </summary>
+        internal static string ας_System_SubstringByRange_EndIndexMustBePastStartIndex {
+            get {
+                return ResourceManager.GetString("ας_System_SubstringByRange_EndIndexMustBePastStartIndex", resourceCulture);
             }
         }
         
