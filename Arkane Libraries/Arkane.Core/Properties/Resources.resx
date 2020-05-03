@@ -222,4 +222,7 @@
   <data name="TransactionAttribute_OnException_RolledBackTransaction" xml:space="preserve">
     <value>{0}.{1}: rolled back transaction {2} on exception.</value>
   </data>
+  <data name="CallMeMaybeAttribute_CallMeMaybeAttribute_MustBeExceptionType" xml:space="preserve">
+    <value>Must be a System.Exception or a type derived from System.Exception.</value>
+  </data>
 </root>

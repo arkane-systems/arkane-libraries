@@ -61,6 +61,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Must be a System.Exception or a type derived from System.Exception..
+        /// </summary>
+        internal static string CallMeMaybeAttribute_CallMeMaybeAttribute_MustBeExceptionType {
+            get {
+                return ResourceManager.GetString("CallMeMaybeAttribute_CallMeMaybeAttribute_MustBeExceptionType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Something happened which cannot happen..
         /// </summary>
         internal static string CannotHappenException_CannotHappenException_SomethingHappened {
