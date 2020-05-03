@@ -205,6 +205,26 @@ namespace ArkaneTests.Core.Logging
             }
         }
 
+        [TestMethod]
+        public void CanLogStructuredMessage ()
+        {
+            this._sut.Info ("Structured {data} message", "log");
+
+            Assert.AreEqual ("Structured \"log\" message", this._logEvent.RenderMessage ()) ;
+            Assert.IsTrue (this._logEvent.Properties.Keys.Contains ("data")) ;
+            Assert.AreEqual ("\"log\"",
+                             this._logEvent.Properties["data"].ToString ()) ;
+        }
+
+        [TestMethod]
+        public void CanLogStructuredSerializedMessage ()
+        {
+            this._sut.Info ("Structured {@data} message", new {Log = "log", Count = "1"}) ;
+
+            Assert.AreEqual ("Structured { Log: \"log\", Count: \"1\" } message", this._logEvent.RenderMessage ()) ;
+            Assert.IsTrue (this._logEvent.Properties.Keys.Contains ("data")) ;
+        }
+
         //[Theory]
         //[InlineData (LogEventLevel.Verbose,
         //             new[] {LogLevel.Trace, LogLevel.Debug, LogLevel.Info, LogLevel.Warn, LogLevel.Error, LogLevel.Fatal})]
