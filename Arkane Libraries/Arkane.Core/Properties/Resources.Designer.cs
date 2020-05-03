@@ -223,6 +223,42 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ambiguous Instance property..
+        /// </summary>
+        internal static string SingletonConstraintAttribute_ValidateCode_AmbiguousInstanceProperty {
+            get {
+                return ResourceManager.GetString("SingletonConstraintAttribute_ValidateCode_AmbiguousInstanceProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} type does not have &apos;private static readonly Lazy&lt;{0}&gt; Lazy = new Lazy&lt;{0}&gt; (() =&gt; new {0} ());&apos;..
+        /// </summary>
+        internal static string SingletonConstraintAttribute_ValidateCode_NoInstanceCreationMethod {
+            get {
+                return ResourceManager.GetString("SingletonConstraintAttribute_ValidateCode_NoInstanceCreationMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} type does not have &apos;public static {0} Instance =&gt; {0}.Lazy.Value&apos;..
+        /// </summary>
+        internal static string SingletonConstraintAttribute_ValidateCode_NoInstanceProperty {
+            get {
+                return ResourceManager.GetString("SingletonConstraintAttribute_ValidateCode_NoInstanceProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} type does not have a single, parameterless private constructor..
+        /// </summary>
+        internal static string SingletonConstraintAttribute_ValidateCode_NoPrivateConstructor {
+            get {
+                return ResourceManager.GetString("SingletonConstraintAttribute_ValidateCode_NoPrivateConstructor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This functionality must be implemented by a subclass of this base class..
         /// </summary>
         internal static string SubclassResponsibilityException_SubclassResponsibilityException_MustImplementInSubclass {
@@ -242,6 +278,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subclasses of {1} ({0}) cannot be sealed..
+        /// </summary>
+        internal static string UnsealableConstraintAttribute_ValidateCode_SubclassesCannotBeSealed {
+            get {
+                return ResourceManager.GetString("UnsealableConstraintAttribute_ValidateCode_SubclassesCannotBeSealed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot call this method for a non-flags enum..
         /// </summary>
         internal static string ας_System_CannotCallForNonFlagsEnum {
@@ -256,6 +301,15 @@ namespace ArkaneSystems.Arkane.Properties {
         internal static string ας_System_Text_Chop_ChopLongerThanString {
             get {
                 return ResourceManager.GetString("ας_System_Text_Chop_ChopLongerThanString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Null IDisposable passed to TryDispose()..
+        /// </summary>
+        internal static string ας_System_TryDispose_NullIDisposablePassedToTryDispose {
+            get {
+                return ResourceManager.GetString("ας_System_TryDispose_NullIDisposablePassedToTryDispose", resourceCulture);
             }
         }
     }

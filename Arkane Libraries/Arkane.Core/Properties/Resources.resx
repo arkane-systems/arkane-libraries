@@ -183,4 +183,22 @@
   <data name="ας_System_Text_Chop_ChopLongerThanString" xml:space="preserve">
     <value>chopSize &gt;= @this.Length</value>
   </data>
+  <data name="SingletonConstraintAttribute_ValidateCode_NoInstanceCreationMethod" xml:space="preserve">
+    <value>The {0} type does not have 'private static readonly Lazy&lt;{0}&gt; Lazy = new Lazy&lt;{0}&gt; (() =&gt; new {0} ());'.</value>
+  </data>
+  <data name="SingletonConstraintAttribute_ValidateCode_NoInstanceProperty" xml:space="preserve">
+    <value>The {0} type does not have 'public static {0} Instance =&gt; {0}.Lazy.Value'.</value>
+  </data>
+  <data name="SingletonConstraintAttribute_ValidateCode_AmbiguousInstanceProperty" xml:space="preserve">
+    <value>Ambiguous Instance property.</value>
+  </data>
+  <data name="SingletonConstraintAttribute_ValidateCode_NoPrivateConstructor" xml:space="preserve">
+    <value>The {0} type does not have a single, parameterless private constructor.</value>
+  </data>
+  <data name="ας_System_TryDispose_NullIDisposablePassedToTryDispose" xml:space="preserve">
+    <value>Null IDisposable passed to TryDispose().</value>
+  </data>
+  <data name="UnsealableConstraintAttribute_ValidateCode_SubclassesCannotBeSealed" xml:space="preserve">
+    <value>Subclasses of {1} ({0}) cannot be sealed.</value>
+  </data>
 </root>

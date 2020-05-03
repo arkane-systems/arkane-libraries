@@ -55,8 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Aspects\Constraints\" />
-    <Folder Include="Aspects\Contracts\" />
     <Folder Include="Aspects\Data\" />
     <Folder Include="Aspects\Diagnostics\" />
     <Folder Include="Aspects\Transactions\" />
