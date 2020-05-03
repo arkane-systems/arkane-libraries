@@ -21,8 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arkane.Core", "Arkane.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkaneTests", "ArkaneTests\ArkaneTests.csproj", "{FD99FACD-7BCB-466F-B713-BBDF1ACF43DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkane.Data", "Arkane.Data\Arkane.Data.csproj", "{071BCEFF-CB7E-486D-880D-860B733BEB70}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\Shared.projitems*{071bceff-cb7e-486d-880d-860b733beb70}*SharedItemsImports = 5
 		Shared\Shared.projitems*{11843eb8-8c8c-4741-b385-c26796b798bb}*SharedItemsImports = 5
 		Shared\Shared.projitems*{38aa0479-2769-4c3f-b152-fca8478ea06a}*SharedItemsImports = 5
 		..\docs\docs.projitems*{5c5d63cb-13fd-4d1a-b3d5-620ac45fee20}*SharedItemsImports = 13
@@ -45,6 +48,10 @@ Global
 		{FD99FACD-7BCB-466F-B713-BBDF1ACF43DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD99FACD-7BCB-466F-B713-BBDF1ACF43DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD99FACD-7BCB-466F-B713-BBDF1ACF43DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071BCEFF-CB7E-486D-880D-860B733BEB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071BCEFF-CB7E-486D-880D-860B733BEB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071BCEFF-CB7E-486D-880D-860B733BEB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071BCEFF-CB7E-486D-880D-860B733BEB70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,49 @@
+﻿#region header
+
+// Arkane.Core - ModuleInit.cs
+// 
+// Alistair J. R. Young
+// Arkane Systems
+// 
+// Copyright Arkane Systems 2012-2020.  All rights reserved.
+// 
+// Created: 2020-04-22 3:26 PM
+
+#endregion
+
+#region using
+
+using System ;
+
+using ArkaneSystems.Arkane.Logging ;
+
+using JetBrains.Annotations ;
+
+using PostSharp.Aspects ; //using ArkaneSystems.Arkane.Logging ;
+
+#endregion
+
+namespace ArkaneSystems.Arkane.Data.Internal
+{
+    /// <summary>
+    ///     Module initializer. Marked static method runs whenever this module is initialized.
+    /// </summary>
+    public static class ModuleInit
+    {
+        private static readonly ILog Logger = LogProvider.GetCurrentClassLogger () ;
+
+        /// <summary>
+        ///     Module initializer. Runs whenever this module is initialized.
+        /// </summary>
+        [ModuleInitializer (0)]
+        [UsedImplicitly]
+        public static void InitializeModule ()
+        {
+            // Mark our presence in the AppContext.
+            AppContext.SetSwitch ("Switch.ArkaneSystems.Arkane.Data.Presence", true) ;
+
+            // Log startup.
+            ModuleInit.Logger.Info ("Arkane.Data library initialized.") ;
+        }
+    }
+}
