@@ -153,6 +153,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A critical error occurred in a GC region..
+        /// </summary>
+        internal static string GCRegionException_GCRegionException_CriticalErrorInGCRegion {
+            get {
+                return ResourceManager.GetString("GCRegionException_GCRegionException_CriticalErrorInGCRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to generate log message..
         /// </summary>
         internal static string LoggerExecutionWrapper_FailedToGenerateLogMessage {
@@ -185,6 +194,33 @@ namespace ArkaneSystems.Arkane.Properties {
         internal static string Memento_Dispose_AttemptedSecondDisposal {
             get {
                 return ResourceManager.GetString("Memento_Dispose_AttemptedSecondDisposal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not enough commitable memory to enter no GC region..
+        /// </summary>
+        internal static string NoGCRegionAttribute_OnInvoke_NotEnoughCommitableMemory {
+            get {
+                return ResourceManager.GetString("NoGCRegionAttribute_OnInvoke_NotEnoughCommitableMemory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No GC region ended prematurely (garbage collection) or overran specified size..
+        /// </summary>
+        internal static string NoGCRegionAttribute_OnInvoke_RegionEndedEarly {
+            get {
+                return ResourceManager.GetString("NoGCRegionAttribute_OnInvoke_RegionEndedEarly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tried to call method that is not supported on this platform..
+        /// </summary>
+        internal static string OnlyOnPlatformAttribute_OnInvoke_NotSupportedOnThisPlatform {
+            get {
+                return ResourceManager.GetString("OnlyOnPlatformAttribute_OnInvoke_NotSupportedOnThisPlatform", resourceCulture);
             }
         }
         

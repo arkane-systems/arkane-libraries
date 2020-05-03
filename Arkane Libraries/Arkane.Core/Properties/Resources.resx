@@ -249,4 +249,16 @@
   <data name="DisposerByReflection_GetPublicParameterlessInstanceMethod_NoPublicParamlessInstanceMethod" xml:space="preserve">
     <value>disposer: Object does not have a public, parameterless {0} instance method.</value>
   </data>
+  <data name="OnlyOnPlatformAttribute_OnInvoke_NotSupportedOnThisPlatform" xml:space="preserve">
+    <value>Tried to call method that is not supported on this platform.</value>
+  </data>
+  <data name="GCRegionException_GCRegionException_CriticalErrorInGCRegion" xml:space="preserve">
+    <value>A critical error occurred in a GC region.</value>
+  </data>
+  <data name="NoGCRegionAttribute_OnInvoke_NotEnoughCommitableMemory" xml:space="preserve">
+    <value>Not enough commitable memory to enter no GC region.</value>
+  </data>
+  <data name="NoGCRegionAttribute_OnInvoke_RegionEndedEarly" xml:space="preserve">
+    <value>No GC region ended prematurely (garbage collection) or overran specified size.</value>
+  </data>
 </root>
