@@ -210,4 +210,7 @@
   <data name="ας_System_SubstringByRange_EndIndexMustBePastStartIndex" xml:space="preserve">
     <value>End index must be &gt;= start index.</value>
   </data>
+  <data name="CrossThreadException_CrossThreadException_ExceptionHasBeenMarshaled" xml:space="preserve">
+    <value>An exception occurred on another thread and has been marshaled into this wrapper: {0}.</value>
+  </data>
 </root>

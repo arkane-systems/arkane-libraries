@@ -70,6 +70,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An exception occurred on another thread and has been marshaled into this wrapper: {0}..
+        /// </summary>
+        internal static string CrossThreadException_CrossThreadException_ExceptionHasBeenMarshaled {
+            get {
+                return ResourceManager.GetString("CrossThreadException_CrossThreadException_ExceptionHasBeenMarshaled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t call this method for a non-flags enum..
         /// </summary>
         internal static string Enums_GetUsedBits_CannotCallForNonFlags {
