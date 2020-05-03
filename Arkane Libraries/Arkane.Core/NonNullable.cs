@@ -44,7 +44,7 @@ namespace ArkaneSystems.Arkane
         /// <summary>
         ///     Creates a non-nullable value encapsulating the specified reference.
         /// </summary>
-        public NonNullable ([NotNull] T value) => this.value = value ;
+        public NonNullable ([NotNull] T value) => this.value = value ?? throw new ArgumentNullException (nameof (value)) ;
 
         /// <summary>
         ///     Retrieves the encapsulated value, or throws a NullReferenceException if
