@@ -277,6 +277,24 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to StringManipulationAttribute can only be used on a string..
+        /// </summary>
+        internal static string StringManipulationAttribute_CompileTimeValidate_CanOnlyBeUsedOnString {
+            get {
+                return ResourceManager.GetString("StringManipulationAttribute_CompileTimeValidate_CanOnlyBeUsedOnString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} cannot be null..
+        /// </summary>
+        internal static string StringManipulationAttribute_ConvertString_CannotBeNull {
+            get {
+                return ResourceManager.GetString("StringManipulationAttribute_ConvertString_CannotBeNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This functionality must be implemented by a subclass of this base class..
         /// </summary>
         internal static string SubclassResponsibilityException_SubclassResponsibilityException_MustImplementInSubclass {

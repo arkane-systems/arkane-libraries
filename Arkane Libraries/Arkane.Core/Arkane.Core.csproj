@@ -54,10 +54,6 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Aspects\Data\" />
-  </ItemGroup>
-
   <Import Project="..\Shared\Shared.projitems" Label="Shared" />
 
 </Project>

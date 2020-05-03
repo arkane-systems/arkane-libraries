@@ -225,4 +225,10 @@
   <data name="CallMeMaybeAttribute_CallMeMaybeAttribute_MustBeExceptionType" xml:space="preserve">
     <value>Must be a System.Exception or a type derived from System.Exception.</value>
   </data>
+  <data name="StringManipulationAttribute_CompileTimeValidate_CanOnlyBeUsedOnString" xml:space="preserve">
+    <value>StringManipulationAttribute can only be used on a string.</value>
+  </data>
+  <data name="StringManipulationAttribute_ConvertString_CannotBeNull" xml:space="preserve">
+    <value>{0} cannot be null.</value>
+  </data>
 </root>
