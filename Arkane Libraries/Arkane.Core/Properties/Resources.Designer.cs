@@ -278,6 +278,33 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}.{1}: initiated transaction {2}..
+        /// </summary>
+        internal static string TransactionAttribute_OnEntry_InitiatedTransaction {
+            get {
+                return ResourceManager.GetString("TransactionAttribute_OnEntry_InitiatedTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}.{1}: rolled back transaction {2} on exception..
+        /// </summary>
+        internal static string TransactionAttribute_OnException_RolledBackTransaction {
+            get {
+                return ResourceManager.GetString("TransactionAttribute_OnException_RolledBackTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}.{1}: committed transaction {2}..
+        /// </summary>
+        internal static string TransactionAttribute_OnSuccess_CommittedTransaction {
+            get {
+                return ResourceManager.GetString("TransactionAttribute_OnSuccess_CommittedTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An invalid type argument was specified..
         /// </summary>
         internal static string TypeArgumentException_TypeArgumentException_InvalidTypeArgument {

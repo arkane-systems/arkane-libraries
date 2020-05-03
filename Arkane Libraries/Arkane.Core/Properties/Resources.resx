@@ -213,4 +213,13 @@
   <data name="CrossThreadException_CrossThreadException_ExceptionHasBeenMarshaled" xml:space="preserve">
     <value>An exception occurred on another thread and has been marshaled into this wrapper: {0}.</value>
   </data>
+  <data name="TransactionAttribute_OnEntry_InitiatedTransaction" xml:space="preserve">
+    <value>{0}.{1}: initiated transaction {2}.</value>
+  </data>
+  <data name="TransactionAttribute_OnSuccess_CommittedTransaction" xml:space="preserve">
+    <value>{0}.{1}: committed transaction {2}.</value>
+  </data>
+  <data name="TransactionAttribute_OnException_RolledBackTransaction" xml:space="preserve">
+    <value>{0}.{1}: rolled back transaction {2} on exception.</value>
+  </data>
 </root>
