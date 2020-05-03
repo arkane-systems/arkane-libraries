@@ -51,7 +51,7 @@ namespace ArkaneTests.Core
         [ExpectedException (typeof (ArgumentNullException))]
         public void NullConstruction ()
         {
-            var _ = new NonNullable <string> (null) ;
+            var _ = new NonNullable <string> (null!) ;
             Assert.Fail ("Expected exception") ;
         }
 
@@ -59,7 +59,7 @@ namespace ArkaneTests.Core
         [ExpectedException (typeof (ArgumentNullException))]
         public void NullConversion ()
         {
-            string x = null ;
+            string x = null! ;
 
             NonNullable <string> y = x ;
             Assert.Fail ("Expected exception:" + y) ;

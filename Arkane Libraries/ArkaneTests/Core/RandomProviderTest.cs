@@ -38,7 +38,7 @@ namespace ArkaneTests.Core
                     this.numbers = new int[size] ;
             }
 
-            private readonly int[] numbers ;
+            private readonly int[]? numbers ;
             private readonly int   size ;
 
             public void GrabNumbers ()
@@ -51,12 +51,12 @@ namespace ArkaneTests.Core
                 }
             }
 
-            public override bool Equals (object o)
+            public override bool Equals (object? o)
             {
-                var other = (RandomGrabber) o ;
+                var other = (RandomGrabber) o! ;
                 for (var i = 0; i < this.size; i++)
                 {
-                    if (this.numbers[i] != other.numbers[i])
+                    if (this.numbers![i] != other!.numbers![i])
                         return false ;
                 }
 

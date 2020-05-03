@@ -95,7 +95,7 @@ namespace ArkaneTests.Core.Logging
             new Tuple <LogLevel, LogEventLevel> (LogLevel.Fatal, LogEventLevel.Fatal)
         } ;
 
-        private LogEvent _logEvent ;
+        private LogEvent _logEvent = new LogEvent (DateTimeOffset.Now, LogEventLevel.Debug, null, MessageTemplate.Empty, new List <LogEventProperty> ()) ;
 
         [TestMethod]
         public void ShouldBeAbleToLogMessage ()
