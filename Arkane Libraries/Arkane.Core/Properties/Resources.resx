@@ -231,4 +231,22 @@
   <data name="StringManipulationAttribute_ConvertString_CannotBeNull" xml:space="preserve">
     <value>{0} cannot be null.</value>
   </data>
+  <data name="Memento_Dispose_AttemptedSecondDisposal" xml:space="preserve">
+    <value>Attempted to dispose the same Memento twice.</value>
+  </data>
+  <data name="DisposerBase_~DisposerBase_ObjectWasNotDisposed" xml:space="preserve">
+    <value>{0} object was not disposed. You should call Dispose() on this {1} instead of letting it be finalized.</value>
+  </data>
+  <data name="DisposerByReflection_DisposerByReflection_CantBeStaticMethod" xml:space="preserve">
+    <value>disposer: Can't be a static method.</value>
+  </data>
+  <data name="DisposerByReflection_DisposerByReflection_CantBeMethodWithParameters" xml:space="preserve">
+    <value>disposer: Can't be a method with parameters.</value>
+  </data>
+  <data name="DisposerByReflection_DisposerByReflection_disposer_CantBeMethodWithUnassignedTypeParams" xml:space="preserve">
+    <value>disposer: Can't be a method with unassigned generic type parameters.</value>
+  </data>
+  <data name="DisposerByReflection_GetPublicParameterlessInstanceMethod_NoPublicParamlessInstanceMethod" xml:space="preserve">
+    <value>disposer: Object does not have a public, parameterless {0} instance method.</value>
+  </data>
 </root>

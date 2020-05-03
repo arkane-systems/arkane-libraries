@@ -88,6 +88,53 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} object was not disposed. You should call Dispose() on this {1} instead of letting it be finalized..
+        /// </summary>
+        internal static string DisposerBase__DisposerBase_ObjectWasNotDisposed {
+            get {
+                return ResourceManager.GetString("DisposerBase_~DisposerBase_ObjectWasNotDisposed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to disposer: Can&apos;t be a method with parameters..
+        /// </summary>
+        internal static string DisposerByReflection_DisposerByReflection_CantBeMethodWithParameters {
+            get {
+                return ResourceManager.GetString("DisposerByReflection_DisposerByReflection_CantBeMethodWithParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to disposer: Can&apos;t be a static method..
+        /// </summary>
+        internal static string DisposerByReflection_DisposerByReflection_CantBeStaticMethod {
+            get {
+                return ResourceManager.GetString("DisposerByReflection_DisposerByReflection_CantBeStaticMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to disposer: Can&apos;t be a method with unassigned generic type parameters..
+        /// </summary>
+        internal static string DisposerByReflection_DisposerByReflection_disposer_CantBeMethodWithUnassignedTypeParams {
+            get {
+                return ResourceManager.GetString("DisposerByReflection_DisposerByReflection_disposer_CantBeMethodWithUnassignedType" +
+                        "Params", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to disposer: Object does not have a public, parameterless {0} instance method..
+        /// </summary>
+        internal static string DisposerByReflection_GetPublicParameterlessInstanceMethod_NoPublicParamlessInstanceMethod {
+            get {
+                return ResourceManager.GetString("DisposerByReflection_GetPublicParameterlessInstanceMethod_NoPublicParamlessInstan" +
+                        "ceMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t call this method for a non-flags enum..
         /// </summary>
         internal static string Enums_GetUsedBits_CannotCallForNonFlags {
@@ -129,6 +176,15 @@ namespace ArkaneSystems.Arkane.Properties {
         internal static string LogProviderBase_ErrorInitializingProvider_ProblemInitializingLogProvider {
             get {
                 return ResourceManager.GetString("LogProviderBase_ErrorInitializingProvider_ProblemInitializingLogProvider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attempted to dispose the same Memento twice..
+        /// </summary>
+        internal static string Memento_Dispose_AttemptedSecondDisposal {
+            get {
+                return ResourceManager.GetString("Memento_Dispose_AttemptedSecondDisposal", resourceCulture);
             }
         }
         
