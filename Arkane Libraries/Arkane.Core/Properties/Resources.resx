@@ -300,4 +300,22 @@
   <data name="CollectionChoiceOfSizeAttribute_GetErrorMessage_CollectionNotOfPermissibleSize" xml:space="preserve">
     <value>Collection {0} not of a permissible size (permitted: {4}).</value>
   </data>
+  <data name="InstantiateIfNullAttribute_CompileTimeValidate_OnlyForProperties" xml:space="preserve">
+    <value>The InstantiateIfNullAttribute can only be applied to properties.</value>
+  </data>
+  <data name="NullTerminatorAttribute_CompileTimeValidate_MustBeReadableProperty" xml:space="preserve">
+    <value>{0} must be a readable property.</value>
+  </data>
+  <data name="NullTerminatorAttribute_CompileTimeValidate_MustBeCompatibleType" xml:space="preserve">
+    <value>{0} must be of a compatible type.</value>
+  </data>
+  <data name="NullTerminatorAttribute_CompileTimeInitialize_ImpossibleNonGenericType" xml:space="preserve">
+    <value>Impossible non-generic type in NullTerminatorAttribute.</value>
+  </data>
+  <data name="NullTerminatorAttribute_CompileTimeInitialize_ImpossibleSingleParameterGenericType" xml:space="preserve">
+    <value>Impossible single-parameter generic type in NullTerminatorAttribute.</value>
+  </data>
+  <data name="NullTerminatorAttribute_CompileTimeInitialize_ImpossibleMultipleParameterGenericType" xml:space="preserve">
+    <value>Impossible multiple-parameter generic type in NullTerminatorAttribute.</value>
+  </data>
 </root>

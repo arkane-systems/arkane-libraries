@@ -207,6 +207,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The InstantiateIfNullAttribute can only be applied to properties..
+        /// </summary>
+        internal static string InstantiateIfNullAttribute_CompileTimeValidate_OnlyForProperties {
+            get {
+                return ResourceManager.GetString("InstantiateIfNullAttribute_CompileTimeValidate_OnlyForProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stream {0} is not seekable..
         /// </summary>
         internal static string IsSeekableAttribute_GetErrorMessage_StreamIsNotSeekable {
@@ -302,6 +311,53 @@ namespace ArkaneSystems.Arkane.Properties {
         internal static string NotDefaultAttribute_GetErrorMessage__HasAndCannotHaveDefaultValue {
             get {
                 return ResourceManager.GetString("NotDefaultAttribute_GetErrorMessage__HasAndCannotHaveDefaultValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impossible multiple-parameter generic type in NullTerminatorAttribute..
+        /// </summary>
+        internal static string NullTerminatorAttribute_CompileTimeInitialize_ImpossibleMultipleParameterGenericType {
+            get {
+                return ResourceManager.GetString("NullTerminatorAttribute_CompileTimeInitialize_ImpossibleMultipleParameterGenericT" +
+                        "ype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impossible non-generic type in NullTerminatorAttribute..
+        /// </summary>
+        internal static string NullTerminatorAttribute_CompileTimeInitialize_ImpossibleNonGenericType {
+            get {
+                return ResourceManager.GetString("NullTerminatorAttribute_CompileTimeInitialize_ImpossibleNonGenericType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impossible single-parameter generic type in NullTerminatorAttribute..
+        /// </summary>
+        internal static string NullTerminatorAttribute_CompileTimeInitialize_ImpossibleSingleParameterGenericType {
+            get {
+                return ResourceManager.GetString("NullTerminatorAttribute_CompileTimeInitialize_ImpossibleSingleParameterGenericTyp" +
+                        "e", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} must be of a compatible type..
+        /// </summary>
+        internal static string NullTerminatorAttribute_CompileTimeValidate_MustBeCompatibleType {
+            get {
+                return ResourceManager.GetString("NullTerminatorAttribute_CompileTimeValidate_MustBeCompatibleType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} must be a readable property..
+        /// </summary>
+        internal static string NullTerminatorAttribute_CompileTimeValidate_MustBeReadableProperty {
+            get {
+                return ResourceManager.GetString("NullTerminatorAttribute_CompileTimeValidate_MustBeReadableProperty", resourceCulture);
             }
         }
         
