@@ -23,6 +23,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;LIBLOG_PUBLIC</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PostSharpSearchPath>../../psbin</PostSharpSearchPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

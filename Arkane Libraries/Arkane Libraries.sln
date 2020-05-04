@@ -31,7 +31,6 @@ Global
 		Shared\Shared.projitems*{11843eb8-8c8c-4741-b385-c26796b798bb}*SharedItemsImports = 5
 		Shared\Shared.projitems*{38aa0479-2769-4c3f-b152-fca8478ea06a}*SharedItemsImports = 5
 		..\docs\docs.projitems*{5c5d63cb-13fd-4d1a-b3d5-620ac45fee20}*SharedItemsImports = 13
-		Shared\Shared.projitems*{5f3be7bb-ac8e-4197-8264-7409539222a3}*SharedItemsImports = 5
 		Shared\Shared.projitems*{8902bbe9-df51-45d6-81d0-310c7a717ed9}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

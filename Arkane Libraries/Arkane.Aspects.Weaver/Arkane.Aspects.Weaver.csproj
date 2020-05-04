@@ -21,8 +21,14 @@
     <RootNamespace>ArkaneSystems.Arkane.Aspects.Weaver</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS0649</NoWarn>
+    <SkipPostSharp>True</SkipPostSharp>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="PostSharp" Version="6.6.6" />
+    <PackageReference Include="PostSharp.Compiler.Engine" Version="6.6.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +51,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <Import Project="..\Shared\Shared.projitems" Label="Shared" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y &quot;$(OutDir)*&quot; &quot;$(SolutionDir)..\psbin&quot;&#xD;&#xA;" />
+  </Target>
 
 </Project>

@@ -1,0 +1,324 @@
+﻿#region header
+
+// Arkane.Aspects.Weaver - ToStringTask.cs
+// 
+// Alistair J. R. Young
+// Arkane Systems
+// 
+// Copyright Arkane Systems 2012-2020.  All rights reserved.
+// 
+// Created: 2020-05-04 3:17 PM
+
+#endregion
+
+#region using
+
+using System.Collections.Generic ;
+using System.Linq ;
+using System.Reflection ;
+using System.Text ;
+
+using JetBrains.Annotations ;
+
+using PostSharp.Reflection ;
+using PostSharp.Sdk.CodeModel ;
+using PostSharp.Sdk.CodeModel.Helpers ;
+using PostSharp.Sdk.Extensibility ;
+using PostSharp.Sdk.Extensibility.Compilers ;
+using PostSharp.Sdk.Extensibility.Tasks ;
+
+#endregion
+
+namespace ArkaneSystems.Arkane.Aspects.Weaver.ToString
+{
+    [UsedImplicitly]
+    [ExportTask (Phase = TaskPhase.CustomTransform, TaskName = nameof (ToStringTask))]
+    public class ToStringTask : Task
+    {
+        [ImportService]
+        private IAnnotationRepositoryService? annotationRepositoryService ;
+
+        private Assets? assets ;
+
+        [ImportService]
+        private ICompilerAdapterService? compilerAdapterService ;
+
+        public override string CopyrightNotice => "Simon Cropp, PostSharp Technologies, and contributors" ;
+
+        public override bool Execute ()
+        {
+            this.assets = new Assets (this.Project.Module) ;
+
+            List <IAnnotationInstance> types = this.annotationRepositoryService!.GetAnnotations (typeof (ToStringAttribute)) ;
+            List <IAnnotationInstance>
+                ignored = this.annotationRepositoryService!.GetAnnotations (typeof (IgnoreDuringToStringAttribute)) ;
+            HashSet <MetadataDeclaration> ignoredDeclarations =
+                new HashSet <MetadataDeclaration> (ignored.Select (tuple => tuple.TargetElement)) ;
+            var basicConfig = Configuration.FindGlobalConfiguration (this.annotationRepositoryService!) ;
+            foreach (var tuple in types)
+            {
+                var config = Configuration.ReadConfiguration (tuple.Value, basicConfig) ;
+                this.AddToStringToType ((tuple.TargetElement as TypeDefDeclaration)!, config, ignoredDeclarations) ;
+            }
+
+            return true ;
+        }
+
+        private void AddToStringToType (TypeDefDeclaration            enhancedType,
+                                        Configuration                 config,
+                                        HashSet <MetadataDeclaration> ignoredDeclarations)
+        {
+            if (enhancedType.Methods.Any <IMethod> (m => (m.Name == "ToString") &&
+                                                         !m.IsStatic            &&
+                                                         (m.ParameterCount == 0)))
+
+                // It's already present, just skip it.
+                return ;
+
+            // Create signature
+            MethodDefDeclaration method = new MethodDefDeclaration
+                                          {
+                                              Name              = "ToString",
+                                              CallingConvention = CallingConvention.HasThis,
+                                              Attributes = MethodAttributes.Public  |
+                                                           MethodAttributes.Virtual |
+                                                           MethodAttributes.HideBySig
+                                          } ;
+            enhancedType.Methods.Add (method) ;
+            CompilerGeneratedAttributeHelper.AddCompilerGeneratedAttribute (method) ;
+            method.ReturnParameter =
+                ParameterDeclaration.CreateReturnParameter (enhancedType.Module.Cache.GetIntrinsic (IntrinsicType.String)) ;
+
+            (var fields, var properties) = this.FindFieldsAndProperties (enhancedType, ignoredDeclarations, config) ;
+
+            // Generate code:
+            using (InstructionWriter writer = InstructionWriter.GetInstance ())
+            {
+                CreatedEmptyMethod getHashCodeData = MethodBodyCreator.CreateModifiableMethodBody (writer, method) ;
+                writer.AttachInstructionSequence (getHashCodeData.PrincipalBlock.AddInstructionSequence ()) ;
+
+                // Create the format string and put it on the stack:
+                int    numberOfArguments = fields.Count + properties.Count ;
+                string formatString      = this.ConstructFormatString (config, enhancedType, fields, properties) ;
+                writer.EmitInstructionString (OpCodeNumber.Ldstr, formatString) ;
+
+                // Create the argument array and put it on the stack:
+                writer.EmitInstructionInt32 (OpCodeNumber.Ldc_I4, numberOfArguments) ;
+                writer.EmitInstructionType (OpCodeNumber.Newarr, enhancedType.Module.Cache.GetIntrinsic (IntrinsicType.Object)) ;
+
+                // Put all the field and property values on the stack:
+                var i = 0 ;
+                foreach (var field in fields)
+                {
+                    this.EmitLoadToString (writer, i, field) ;
+                    i++ ;
+                }
+
+                bool enhancedTypeIsValueType = enhancedType.IsValueTypeSafe () == true ;
+                foreach (var property in properties)
+                {
+                    this.EmitLoadToString (writer, i, property, enhancedTypeIsValueType) ;
+                    i++ ;
+                }
+
+                // Return string.Format(formatString, theArgumentArray):
+                writer.EmitInstructionMethod (OpCodeNumber.Call, this.assets!.String_Format) ;
+                writer.EmitInstructionLocalVariable (OpCodeNumber.Stloc, getHashCodeData.ReturnVariable) ;
+                writer.EmitBranchingInstruction (OpCodeNumber.Br, getHashCodeData.ReturnSequence) ;
+                writer.DetachInstructionSequence () ;
+            }
+        }
+
+        /// <summary>
+        ///     Finds all fields and properties in the type that should be put into ToString. This includes accessible
+        ///     fields and properties in base classes, transitively, but it excludes ignored fields and properties.
+        /// </summary>
+        private (List <UsableField> fields, List <UsableProperty> properties) FindFieldsAndProperties (
+            TypeDefDeclaration            enhancedType,
+            HashSet <MetadataDeclaration> ignoredDeclarations,
+            Configuration                 config)
+        {
+            List <UsableField>    fields         = new List <UsableField> () ;
+            List <UsableProperty> properties     = new List <UsableProperty> () ;
+            TypeDefDeclaration    processingType = enhancedType ;
+            GenericMap            mapToGetThere  = enhancedType.GetGenericContext () ;
+            var                   isInBaseType   = false ;
+            while (true)
+            {
+                foreach (FieldDefDeclaration field in processingType.Fields)
+                {
+                    if (field.IsStatic || field.IsConst || ignoredDeclarations.Contains (field))
+                        continue ;
+                    if ((field.Visibility == Visibility.Private) && !config.IncludePrivate)
+                        continue ;
+
+                    // Exclude inaccessible fields:
+                    if (isInBaseType && !field.IsVisible (enhancedType))
+                        continue ;
+
+                    // Exclude PostSharp and generated fields:
+                    if (field.Name[0] == '<')
+                        continue ;
+
+                    // Exclude field-like events:
+                    if (processingType.Events.Any (ev => ev.Name == field.Name))
+                        continue ;
+
+                    fields.Add (new UsableField (field, mapToGetThere)) ;
+                }
+
+                foreach (PropertyDeclaration property in processingType.Properties)
+                {
+                    // For auto-implemented properties, consider the property only, not the field:
+                    FieldDefDeclaration backingField = this.compilerAdapterService!.GetBackingField (property) ;
+                    if (backingField != null)
+                        fields.RemoveAll (f => f.FieldDefinition == backingField) ;
+
+                    // Exclude indexers:
+                    if (property.IsStatic                       ||
+                        ignoredDeclarations.Contains (property) ||
+                        !property.CanRead                       ||
+                        (property.Getter.Parameters.Count != 0))
+                        continue ;
+                    if ((property.Visibility == Visibility.Private) && !config.IncludePrivate)
+                        continue ;
+
+                    // Exclude inaccessible properties:
+                    if (isInBaseType && !property.IsVisible (enhancedType))
+                        continue ;
+
+                    // Exclude PostSharp and generated fields that were lifted into properties:
+                    if (property.Name[0] == '<')
+                        continue ;
+
+                    // Exclude base properties with the same name. This way, if a property is overridden, we output it
+                    // only once:
+                    if (properties.Any (prp => prp.PropertyDefinition.Name == property.Name))
+                        continue ;
+
+                    // Exclude field-like events (whose fields were promoted to properties by PostSharp):
+                    if (processingType.Events.Any (ev => ev.Name == property.Name))
+                        continue ;
+
+                    properties.Add (new UsableProperty (property, mapToGetThere)) ;
+                }
+
+
+                // Ends at System.Object:
+                if (processingType.BaseType == null)
+                    break ;
+
+                isInBaseType   = true ;
+                mapToGetThere  = processingType.BaseType.GetGenericContext ().Apply (mapToGetThere) ;
+                processingType = processingType.BaseType.GetTypeDefinition () ;
+            }
+
+            return (fields, properties) ;
+        }
+
+        private void EmitLoadToString (InstructionWriter writer, int index, UsableProperty property, bool enhancedTypeIsValueType)
+        {
+            this.EmitPrologueToLoad (writer, index) ;
+
+            // Load the value:
+            writer.EmitInstruction (OpCodeNumber.Ldarg_0) ;
+            writer.EmitInstructionMethod (enhancedTypeIsValueType ? OpCodeNumber.Call : OpCodeNumber.Callvirt,
+                                          property.PropertyDefinition.Getter
+                                                  .GetGenericInstance (property.MapToAccessThisPropertyFromMostDerivedClass)
+                                                  .TranslateMethod (this.Project.Module)) ;
+
+            this.EmitEpilogueToLoad (writer,
+                                     property.PropertyDefinition.PropertyType.TranslateType (this.Project.Module)
+                                             .MapGenericArguments (property.MapToAccessThisPropertyFromMostDerivedClass)) ;
+        }
+
+        private void EmitLoadToString (InstructionWriter writer, int index, UsableField field)
+        {
+            this.EmitPrologueToLoad (writer, index) ;
+
+            // Load the value:
+            writer.EmitInstruction (OpCodeNumber.Ldarg_0) ;
+            IField usedField = field.FieldDefinition.Translate (this.Project.Module)
+                                    .GetGenericInstance (field.MapToAccessTheFieldFromMostDerivedClass) ;
+            writer.EmitInstructionField (OpCodeNumber.Ldfld, usedField) ;
+
+            this.EmitEpilogueToLoad (writer,
+                                     usedField.FieldType.TranslateType (this.Project.Module)
+                                              .MapGenericArguments (field.MapToAccessTheFieldFromMostDerivedClass)) ;
+        }
+
+        private void EmitPrologueToLoad (InstructionWriter writer, int index)
+        {
+            writer.EmitInstruction (OpCodeNumber.Dup) ;                // puts a pointer to the argument array on the stack
+            writer.EmitInstructionInt32 (OpCodeNumber.Ldc_I4, index) ; // puts an index into the argument array on the stack
+        }
+
+        private void EmitEpilogueToLoad (InstructionWriter writer, ITypeSignature type)
+        {
+            if ((type.IsValueTypeSafe ()       == true)                                               ||
+                (type.TypeSignatureElementKind == TypeSignatureElementKind.GenericParameterReference) ||
+                (type.TypeSignatureElementKind == TypeSignatureElementKind.GenericParameter))
+            {
+                writer.EmitInstructionType (OpCodeNumber.Box, type) ;
+            }
+            else
+            {
+                writer.EmitInstruction (OpCodeNumber.Dup) ;
+
+                // if null?
+                writer.IfNotZero (() =>
+                                  {
+                                      // ok, use the duplicate
+                                  },
+                                  () =>
+                                  {
+                                      writer.EmitInstruction (OpCodeNumber.Pop) ;                 // remove the duplicate
+                                      writer.EmitInstructionString (OpCodeNumber.Ldstr, "null") ; // replace with null
+                                  }) ;
+            }
+
+            // store the value onto the position in the argument array (position was put onto stack by the prologue)
+            writer.EmitInstruction (OpCodeNumber.Stelem_Ref) ;
+        }
+
+        private string ConstructFormatString (Configuration         config,
+                                              TypeDefDeclaration    type,
+                                              List <UsableField>    fields,
+                                              List <UsableProperty> properties)
+        {
+            StringBuilder sb              = new StringBuilder () ;
+            bool          isThereAnything = (fields.Count > 0) || (properties.Count > 0) ;
+            if (config.WrapWithBraces)
+                sb.Append ("{{") ;
+
+            if (config.WriteTypeName)
+                sb.Append (type.ShortName + (isThereAnything ? "; " : "")) ;
+
+            var all = fields.Select (fld => fld.FieldDefinition)
+                            .Concat <NamedMetadataDeclaration> (properties.Select (prp => prp.PropertyDefinition)) ;
+            var i = 0 ;
+            foreach (NamedMetadataDeclaration item in all)
+            {
+                if (i != 0)
+                    sb.Append (config.PropertiesSeparator) ;
+
+                string name    = item.Name ;
+                int    lastDot = name.LastIndexOf ('.') ;
+                if (lastDot != -1)
+                    name = name.Substring (lastDot + 1) ;
+
+                sb.Append (name) ;
+                sb.Append (config.NameValueSeparator) ;
+                sb.Append ("{") ;
+                sb.Append (i) ;
+                sb.Append ("}") ;
+                i++ ;
+            }
+
+            if (config.WrapWithBraces)
+                sb.Append ("}}") ;
+
+            return sb.ToString () ;
+        }
+    }
+}

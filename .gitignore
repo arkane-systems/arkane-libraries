@@ -332,3 +332,4 @@ ASALocalRun/
 # Sphinx built files
 docs/_build/
 
+/psbin
