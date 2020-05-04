@@ -261,4 +261,10 @@
   <data name="NoGCRegionAttribute_OnInvoke_RegionEndedEarly" xml:space="preserve">
     <value>No GC region ended prematurely (garbage collection) or overran specified size.</value>
   </data>
+  <data name="IsSeekableAttribute_GetErrorMessage_StreamIsNotSeekable" xml:space="preserve">
+    <value>Stream {0} is not seekable.</value>
+  </data>
+  <data name="IsWritableAttribute_GetErrorMessage_StreamNotWritable" xml:space="preserve">
+    <value>Stream {0} is not writable.</value>
+  </data>
 </root>

@@ -162,6 +162,24 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stream {0} is not seekable..
+        /// </summary>
+        internal static string IsSeekableAttribute_GetErrorMessage_StreamIsNotSeekable {
+            get {
+                return ResourceManager.GetString("IsSeekableAttribute_GetErrorMessage_StreamIsNotSeekable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stream {0} is not writable..
+        /// </summary>
+        internal static string IsWritableAttribute_GetErrorMessage_StreamNotWritable {
+            get {
+                return ResourceManager.GetString("IsWritableAttribute_GetErrorMessage_StreamNotWritable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to generate log message..
         /// </summary>
         internal static string LoggerExecutionWrapper_FailedToGenerateLogMessage {
