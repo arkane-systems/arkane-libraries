@@ -19,9 +19,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "docs", "..\docs\docs.shproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arkane.Core", "Arkane.Core\Arkane.Core.csproj", "{38AA0479-2769-4C3F-B152-FCA8478EA06A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArkaneTests", "ArkaneTests\ArkaneTests.csproj", "{FD99FACD-7BCB-466F-B713-BBDF1ACF43DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArkaneTests", "ArkaneTests\ArkaneTests.csproj", "{FD99FACD-7BCB-466F-B713-BBDF1ACF43DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkane.Data", "Arkane.Data\Arkane.Data.csproj", "{071BCEFF-CB7E-486D-880D-860B733BEB70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arkane.Data", "Arkane.Data\Arkane.Data.csproj", "{071BCEFF-CB7E-486D-880D-860B733BEB70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkane.Aspects.Weaver", "Arkane.Aspects.Weaver\Arkane.Aspects.Weaver.csproj", "{5F3BE7BB-AC8E-4197-8264-7409539222A3}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -29,6 +31,7 @@ Global
 		Shared\Shared.projitems*{11843eb8-8c8c-4741-b385-c26796b798bb}*SharedItemsImports = 5
 		Shared\Shared.projitems*{38aa0479-2769-4c3f-b152-fca8478ea06a}*SharedItemsImports = 5
 		..\docs\docs.projitems*{5c5d63cb-13fd-4d1a-b3d5-620ac45fee20}*SharedItemsImports = 13
+		Shared\Shared.projitems*{5f3be7bb-ac8e-4197-8264-7409539222a3}*SharedItemsImports = 5
 		Shared\Shared.projitems*{8902bbe9-df51-45d6-81d0-310c7a717ed9}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +55,10 @@ Global
 		{071BCEFF-CB7E-486D-880D-860B733BEB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{071BCEFF-CB7E-486D-880D-860B733BEB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{071BCEFF-CB7E-486D-880D-860B733BEB70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3BE7BB-AC8E-4197-8264-7409539222A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3BE7BB-AC8E-4197-8264-7409539222A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3BE7BB-AC8E-4197-8264-7409539222A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3BE7BB-AC8E-4197-8264-7409539222A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
