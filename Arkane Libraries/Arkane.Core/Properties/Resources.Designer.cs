@@ -79,6 +79,51 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Collection {0} not of a permissible size (permitted: {4})..
+        /// </summary>
+        internal static string CollectionChoiceOfSizeAttribute_GetErrorMessage_CollectionNotOfPermissibleSize {
+            get {
+                return ResourceManager.GetString("CollectionChoiceOfSizeAttribute_GetErrorMessage_CollectionNotOfPermissibleSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collection {0} smaller than minimum size = {4}..
+        /// </summary>
+        internal static string CollectionSizeAttribute_GetErrorMessage_BelowMinimumSize {
+            get {
+                return ResourceManager.GetString("CollectionSizeAttribute_GetErrorMessage_BelowMinimumSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collection {0} exceeds maximum size = {4}..
+        /// </summary>
+        internal static string CollectionSizeAttribute_GetErrorMessage_ExceedsMaximumSize {
+            get {
+                return ResourceManager.GetString("CollectionSizeAttribute_GetErrorMessage_ExceedsMaximumSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collection {0} outside permissible size (minimum = {4}, maximum = {5})..
+        /// </summary>
+        internal static string CollectionSizeAttribute_GetErrorMessage_OutsidePermissibleSize {
+            get {
+                return ResourceManager.GetString("CollectionSizeAttribute_GetErrorMessage_OutsidePermissibleSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unknown error has occurred..
+        /// </summary>
+        internal static string ConcealExceptionsAttribute_ConcealExceptionsAttribute_UnknownErrorHasOccurred {
+            get {
+                return ResourceManager.GetString("ConcealExceptionsAttribute_ConcealExceptionsAttribute_UnknownErrorHasOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An exception occurred on another thread and has been marshaled into this wrapper: {0}..
         /// </summary>
         internal static string CrossThreadException_CrossThreadException_ExceptionHasBeenMarshaled {
@@ -180,6 +225,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} must be a read-only property..
+        /// </summary>
+        internal static string LazyInitializedAttribute_CompileTimeValidate_MustBeReadOnlyProperty {
+            get {
+                return ResourceManager.GetString("LazyInitializedAttribute_CompileTimeValidate_MustBeReadOnlyProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to generate log message..
         /// </summary>
         internal static string LoggerExecutionWrapper_FailedToGenerateLogMessage {
@@ -207,6 +261,15 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {2} must be a valid MAC-48 address..
+        /// </summary>
+        internal static string Mac48AddressAttribute_GetErrorMessage_MustBeValidMacAddress {
+            get {
+                return ResourceManager.GetString("Mac48AddressAttribute_GetErrorMessage_MustBeValidMacAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attempted to dispose the same Memento twice..
         /// </summary>
         internal static string Memento_Dispose_AttemptedSecondDisposal {
@@ -230,6 +293,15 @@ namespace ArkaneSystems.Arkane.Properties {
         internal static string NoGCRegionAttribute_OnInvoke_RegionEndedEarly {
             get {
                 return ResourceManager.GetString("NoGCRegionAttribute_OnInvoke_RegionEndedEarly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} has and cannot have its default value..
+        /// </summary>
+        internal static string NotDefaultAttribute_GetErrorMessage__HasAndCannotHaveDefaultValue {
+            get {
+                return ResourceManager.GetString("NotDefaultAttribute_GetErrorMessage__HasAndCannotHaveDefaultValue", resourceCulture);
             }
         }
         
@@ -451,11 +523,38 @@ namespace ArkaneSystems.Arkane.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to UnlessDisposedAttribute can only be applied to types implementing System.IDisposable..
+        /// </summary>
+        internal static string UnlessDisposedAttribute_CompileTimeValidate_OnlyDisposableTypes {
+            get {
+                return ResourceManager.GetString("UnlessDisposedAttribute_CompileTimeValidate_OnlyDisposableTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UnlessDisposedAttribute can only be applied to types containing a private &apos;disposed&apos; field..
+        /// </summary>
+        internal static string UnlessDisposedAttribute_CompileTimeValidate_RequiresDisposedField {
+            get {
+                return ResourceManager.GetString("UnlessDisposedAttribute_CompileTimeValidate_RequiresDisposedField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subclasses of {1} ({0}) cannot be sealed..
         /// </summary>
         internal static string UnsealableConstraintAttribute_ValidateCode_SubclassesCannotBeSealed {
             get {
                 return ResourceManager.GetString("UnsealableConstraintAttribute_ValidateCode_SubclassesCannotBeSealed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event handler &apos;{0}&apos; invoked with arguments {1} failed with exception {2}; unsubscribing..
+        /// </summary>
+        internal static string UnsubscribeOnFailAttribute_OnInvokeHandler_EventHandlerFailedUnsubscribing {
+            get {
+                return ResourceManager.GetString("UnsubscribeOnFailAttribute_OnInvokeHandler_EventHandlerFailedUnsubscribing", resourceCulture);
             }
         }
         

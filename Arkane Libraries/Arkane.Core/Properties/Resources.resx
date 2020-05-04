@@ -267,4 +267,37 @@
   <data name="IsWritableAttribute_GetErrorMessage_StreamNotWritable" xml:space="preserve">
     <value>Stream {0} is not writable.</value>
   </data>
+  <data name="UnlessDisposedAttribute_CompileTimeValidate_OnlyDisposableTypes" xml:space="preserve">
+    <value>UnlessDisposedAttribute can only be applied to types implementing System.IDisposable.</value>
+  </data>
+  <data name="UnlessDisposedAttribute_CompileTimeValidate_RequiresDisposedField" xml:space="preserve">
+    <value>UnlessDisposedAttribute can only be applied to types containing a private 'disposed' field.</value>
+  </data>
+  <data name="NotDefaultAttribute_GetErrorMessage__HasAndCannotHaveDefaultValue" xml:space="preserve">
+    <value>{0} has and cannot have its default value.</value>
+  </data>
+  <data name="UnsubscribeOnFailAttribute_OnInvokeHandler_EventHandlerFailedUnsubscribing" xml:space="preserve">
+    <value>Event handler '{0}' invoked with arguments {1} failed with exception {2}; unsubscribing.</value>
+  </data>
+  <data name="Mac48AddressAttribute_GetErrorMessage_MustBeValidMacAddress" xml:space="preserve">
+    <value>The {2} must be a valid MAC-48 address.</value>
+  </data>
+  <data name="LazyInitializedAttribute_CompileTimeValidate_MustBeReadOnlyProperty" xml:space="preserve">
+    <value>{0} must be a read-only property.</value>
+  </data>
+  <data name="CollectionSizeAttribute_GetErrorMessage_ExceedsMaximumSize" xml:space="preserve">
+    <value>Collection {0} exceeds maximum size = {4}.</value>
+  </data>
+  <data name="CollectionSizeAttribute_GetErrorMessage_BelowMinimumSize" xml:space="preserve">
+    <value>Collection {0} smaller than minimum size = {4}.</value>
+  </data>
+  <data name="CollectionSizeAttribute_GetErrorMessage_OutsidePermissibleSize" xml:space="preserve">
+    <value>Collection {0} outside permissible size (minimum = {4}, maximum = {5}).</value>
+  </data>
+  <data name="ConcealExceptionsAttribute_ConcealExceptionsAttribute_UnknownErrorHasOccurred" xml:space="preserve">
+    <value>An unknown error has occurred.</value>
+  </data>
+  <data name="CollectionChoiceOfSizeAttribute_GetErrorMessage_CollectionNotOfPermissibleSize" xml:space="preserve">
+    <value>Collection {0} not of a permissible size (permitted: {4}).</value>
+  </data>
 </root>
