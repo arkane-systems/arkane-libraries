@@ -40,6 +40,7 @@
 
   <ItemGroup>
     <Folder Include="Annotations\" />
+    <Folder Include="Core\Aspects\DeepSerializable\" />
   </ItemGroup>
 
 </Project>
