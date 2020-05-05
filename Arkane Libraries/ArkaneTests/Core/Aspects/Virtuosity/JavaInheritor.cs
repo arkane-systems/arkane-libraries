@@ -22,7 +22,9 @@ namespace ArkaneTests.Core.Aspects.Virtuosity
     [Virtual]
     public class JavaInheritor : JavaLikeClass
     {
+#pragma warning disable 108,114
         public string Ha () => "Subclass" ;
+#pragma warning restore 108,114
 
         public new string He () => "Subclass" ;
     }

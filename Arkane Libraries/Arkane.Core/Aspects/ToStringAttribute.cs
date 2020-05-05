@@ -13,6 +13,11 @@
 
 #region using
 
+using System ;
+using System.Linq ;
+
+using ArkaneSystems.Arkane.Annotations ;
+
 using JetBrains.Annotations ;
 
 using PostSharp.Extensibility ;
@@ -29,5 +34,8 @@ namespace ArkaneSystems.Arkane.Aspects
     [PublicAPI]
     [RequirePostSharp ("Arkane.Aspects.Weaver", "ToStringTask")]
     public class ToStringAttribute : AbstractBaseToStringAttribute
-    { }
+    {
+        /// <inheritdoc />
+        public override void ValidateCode (object target) => PostSharpHelpers.RequireArkaneAspectsWeaver (this.GetType (), target, "ToStringAttribute: Automatically generates a ToString() method.") ;
+    }
 }

@@ -31,5 +31,11 @@ namespace ArkaneSystems.Arkane.Aspects
     [MulticastAttributeUsage (MulticastTargets.Assembly)]
     [PublicAPI]
     public class ToStringGlobalOptionsAttribute : AbstractBaseToStringAttribute
-    { }
+    {
+        /// <inheritdoc />
+        public override void ValidateCode (object target) =>
+            PostSharpHelpers.RequireArkaneAspectsWeaver (this.GetType (),
+                                                         target,
+                                                         "ToStringGlobalOptionsAttribute: Sets default properties for ToStringAttributes.") ;
+    }
 }

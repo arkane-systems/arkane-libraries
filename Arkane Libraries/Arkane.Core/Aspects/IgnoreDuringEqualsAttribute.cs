@@ -15,6 +15,7 @@
 
 using JetBrains.Annotations ;
 
+using PostSharp.Constraints ;
 using PostSharp.Extensibility ;
 
 #endregion
@@ -26,6 +27,12 @@ namespace ArkaneSystems.Arkane.Aspects
     /// </summary>
     [MulticastAttributeUsage (MulticastTargets.Field | MulticastTargets.Property)]
     [PublicAPI]
-    public sealed class IgnoreDuringEqualsAttribute : MulticastAttribute
-    { }
+    public sealed class IgnoreDuringEqualsAttribute : ScalarConstraint
+    {
+        /// <inheritdoc />
+        public override void ValidateCode (object target) =>
+            PostSharpHelpers.RequireArkaneAspectsWeaver (this.GetType (),
+                                                         target,
+                                                         "IgnoreDuringEqualsAttribute: Ignore this field or property during the generation of Equals and GetHashCode methods.") ;
+    }
 }

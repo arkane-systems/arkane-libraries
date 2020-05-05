@@ -15,6 +15,7 @@
 
 using JetBrains.Annotations ;
 
+using PostSharp.Constraints ;
 using PostSharp.Extensibility ;
 
 #endregion
@@ -28,7 +29,7 @@ namespace ArkaneSystems.Arkane.Aspects
     [MulticastAttributeUsage (MulticastTargets.Class | MulticastTargets.Struct)]
     [PublicAPI]
     [RequirePostSharp ("Arkane.Aspects.Weaver", "StructuralEqualityTask")]
-    public class StructuralEqualityAttribute : MulticastAttribute
+    public class StructuralEqualityAttribute : ScalarConstraint
     {
         /// <summary>
         ///     If true, PostSharp does not create the <see cref="object.GetHashCode" /> method. If you supply your own GetHashCode
@@ -57,5 +58,11 @@ namespace ArkaneSystems.Arkane.Aspects
         ///     If true, equality operators are neither checked nor replaced.
         /// </summary>
         public bool DoNotAddEqualityOperators { get ; set ; }
+
+        /// <inheritdoc />
+        public override void ValidateCode (object target) =>
+            PostSharpHelpers.RequireArkaneAspectsWeaver (this.GetType (),
+                                                         target,
+                                                         "StructuralEqualityAttribute: Generates Equals() and GetHashCode() implementations.") ;
     }
 }

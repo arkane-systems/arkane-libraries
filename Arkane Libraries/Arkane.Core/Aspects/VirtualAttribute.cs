@@ -17,6 +17,7 @@ using System ;
 
 using JetBrains.Annotations ;
 
+using PostSharp.Constraints ;
 using PostSharp.Extensibility ;
 
 #endregion
@@ -32,6 +33,12 @@ namespace ArkaneSystems.Arkane.Aspects
     [MulticastAttributeUsage (MulticastTargets.Method | MulticastTargets.Property)]
     [PublicAPI]
     [RequirePostSharp ("Arkane.Aspects.Weaver", "VirtuosityTask")]
-    public class VirtualAttribute : MulticastAttribute
-    { }
+    public class VirtualAttribute : ScalarConstraint
+    {
+        /// <inheritdoc />
+        public override void ValidateCode (object target) =>
+            PostSharpHelpers.RequireArkaneAspectsWeaver (this.GetType (),
+                                                         target,
+                                                         "VirtualAttribute: All non-private properties and methods of the classes affected will be changed to virtual.") ;
+    }
 }

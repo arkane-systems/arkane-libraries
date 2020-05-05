@@ -13,6 +13,8 @@
 
 #region using
 
+using PostSharp ;
+using PostSharp.Constraints ;
 using PostSharp.Extensibility ;
 
 #endregion
@@ -23,7 +25,7 @@ namespace ArkaneSystems.Arkane.Aspects
     ///     Base class for <see cref="ToStringAttribute" /> and <see cref="ToStringGlobalOptionsAttribute" />.
     /// </summary>
 #pragma warning disable CS3015 // Type has no accessible constructors which use only CLS-compliant types
-    public abstract class AbstractBaseToStringAttribute : MulticastAttribute
+    public abstract class AbstractBaseToStringAttribute : /* MulticastAttribute,*/ ScalarConstraint
 #pragma warning restore CS3015 // Type has no accessible constructors which use only CLS-compliant types
     {
         private protected AbstractBaseToStringAttribute () { }

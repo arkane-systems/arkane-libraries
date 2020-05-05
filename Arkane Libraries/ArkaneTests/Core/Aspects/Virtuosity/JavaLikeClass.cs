@@ -31,7 +31,5 @@ namespace ArkaneTests.Core.Aspects.Virtuosity
         public string Ha () => "BaseClass" ;
 
         public string He () => "BaseClass" ;
-
-        private void Noro () { }
     }
 }

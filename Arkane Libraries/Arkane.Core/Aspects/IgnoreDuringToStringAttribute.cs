@@ -15,6 +15,7 @@
 
 using JetBrains.Annotations ;
 
+using PostSharp.Constraints ;
 using PostSharp.Extensibility ;
 
 #endregion
@@ -26,6 +27,12 @@ namespace ArkaneSystems.Arkane.Aspects
     /// </summary>
     [MulticastAttributeUsage (MulticastTargets.Field | MulticastTargets.Property)]
     [PublicAPI]
-    public class IgnoreDuringToStringAttribute : MulticastAttribute
-    { }
+    public class IgnoreDuringToStringAttribute : ScalarConstraint
+    {
+        /// <inheritdoc />
+        public override void ValidateCode (object target) =>
+            PostSharpHelpers.RequireArkaneAspectsWeaver (this.GetType (),
+                                                         target,
+                                                         "IgnoreDuringToStringAttribute: Skip this field or property from the generation of code in ToString().") ;
+    }
 }

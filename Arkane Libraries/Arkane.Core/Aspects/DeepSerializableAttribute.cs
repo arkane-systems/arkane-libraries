@@ -15,6 +15,7 @@
 
 using JetBrains.Annotations ;
 
+using PostSharp.Constraints ;
 using PostSharp.Extensibility ;
 
 #endregion
@@ -35,6 +36,12 @@ namespace ArkaneSystems.Arkane.Aspects
     [MulticastAttributeUsage (MulticastTargets.Class | MulticastTargets.Struct)]
     [PublicAPI]
     [RequirePostSharp ("Arkane.Aspects.Weaver", "DeepSerializableTask")]
-    public class DeepSerializableAttribute : MulticastAttribute
-    { }
+    public class DeepSerializableAttribute : ScalarConstraint
+    {
+        /// <inheritdoc />
+        public override void ValidateCode (object target) =>
+            PostSharpHelpers.RequireArkaneAspectsWeaver (this.GetType (),
+                                                         target,
+                                                         "DeepSerializableAttribute: Makes this class and all classes that this class references [Serializable] at build time.") ;
+    }
 }
