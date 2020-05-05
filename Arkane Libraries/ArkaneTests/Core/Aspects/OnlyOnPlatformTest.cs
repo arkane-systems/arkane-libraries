@@ -25,7 +25,7 @@ namespace ArkaneTests.Core.Aspects
         private void OnLinuxBoom (ref int a) { a++ ; }
 
         [TestMethod]
-        [Warning ("This test depends on the test run being performed under Windows.")]
+        [Information ("This test depends on the test run being performed under Windows.")]
         public void WorksOnWindows ()
         {
             var a = 0 ;
@@ -35,7 +35,7 @@ namespace ArkaneTests.Core.Aspects
         }
 
         [TestMethod]
-        [Warning ("This test depends on the test run being performed under Windows.")]
+        [Information ("This test depends on the test run being performed under Windows.")]
         public void WorksOnLinux ()
         {
             var a = 0 ;
@@ -45,7 +45,7 @@ namespace ArkaneTests.Core.Aspects
         }
 
         [TestMethod]
-        [Warning ("This test depends on the test run being performed under Windows.")]
+        [Information ("This test depends on the test run being performed under Windows.")]
         public void WorksOnWindowsOrLinux ()
         {
             var a = 0 ;
@@ -55,7 +55,7 @@ namespace ArkaneTests.Core.Aspects
         }
 
         [TestMethod]
-        [Warning ("This test depends on the test run being performed under Windows.")]
+        [Information ("This test depends on the test run being performed under Windows.")]
         [ExpectedException (typeof (PlatformNotSupportedException))]
         public void WorksOnLinuxException ()
         {
