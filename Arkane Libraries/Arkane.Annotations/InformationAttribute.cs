@@ -43,7 +43,6 @@ namespace ArkaneSystems.Arkane.Annotations
         ///     Display the message at <see cref="SeverityType.ImportantInfo" /> rather than
         ///     <see cref="SeverityType.Info" />.
         /// </param>
-        /// <param name="once">Display the given informational message only once.</param>
         public InformationAttribute (string reason    = "No specific informational text has been specified.",
                                      bool   important = true)
         {

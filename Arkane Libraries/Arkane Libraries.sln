@@ -20,10 +20,13 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arkane.Core", "Arkane.Core\Arkane.Core.csproj", "{38AA0479-2769-4C3F-B152-FCA8478EA06A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArkaneTests", "ArkaneTests\ArkaneTests.csproj", "{FD99FACD-7BCB-466F-B713-BBDF1ACF43DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F3BE7BB-AC8E-4197-8264-7409539222A3} = {5F3BE7BB-AC8E-4197-8264-7409539222A3}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arkane.Data", "Arkane.Data\Arkane.Data.csproj", "{071BCEFF-CB7E-486D-880D-860B733BEB70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkane.Aspects.Weaver", "Arkane.Aspects.Weaver\Arkane.Aspects.Weaver.csproj", "{5F3BE7BB-AC8E-4197-8264-7409539222A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arkane.Aspects.Weaver", "Arkane.Aspects.Weaver\Arkane.Aspects.Weaver.csproj", "{5F3BE7BB-AC8E-4197-8264-7409539222A3}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

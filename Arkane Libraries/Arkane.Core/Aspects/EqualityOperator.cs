@@ -26,7 +26,7 @@ namespace ArkaneSystems.Arkane.Aspects
     ///     Allows you to have PostSharp auto-generate <c>==</c> and <c>!=</c> operators for you.
     /// </summary>
     [PublicAPI]
-    public static class StructuralEqualityOperator
+    public static class EqualityOperator
     {
         /// <summary>
         ///     Add the following code to a type annotated with <c>[StructuralEquality]</c> to auto-generate equality operators.
@@ -37,7 +37,7 @@ namespace ArkaneSystems.Arkane.Aspects
         ///     Calls to this method are replaced at build time with appropriate code by PostSharp.
         /// </summary>
         [SuppressMessage ("Style", "IDE0060:Remove unused parameter", Justification = "Parameter is used in postcompile.")]
-        public static bool Weave <T> (T left, T right) => throw StructuralEqualityOperator.WeavingNotWorkingException () ;
+        public static bool Weave <T> (T left, T right) => throw EqualityOperator.WeavingNotWorkingException () ;
 
         private static Exception WeavingNotWorkingException () =>
             new

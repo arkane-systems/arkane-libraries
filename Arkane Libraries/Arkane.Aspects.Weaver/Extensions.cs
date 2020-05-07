@@ -14,6 +14,7 @@
 #region using
 
 using System ;
+using System.Collections ;
 using System.Collections.Generic ;
 
 using PostSharp.Sdk.CodeModel ;
@@ -42,5 +43,9 @@ namespace ArkaneSystems.Arkane.Aspects.Weaver
 
             return l ;
         }
+
+        public static bool IsCollection (this ITypeSignature type) =>
+            type.IsAssignableToRuntimeType (typeof (IEnumerable)) &&
+            !type.IsAssignableToRuntimeType (typeof (string)) ;
     }
 }
